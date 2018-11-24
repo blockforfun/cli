@@ -17,7 +17,7 @@ module.exports = entriesMixin = repo => {
                     const body = await super.loadText(file.hash);
                     const [ flags, description ] = body.split('\n');
                     yield {
-                        id: path.replace(number, ''),
+                        number: path.replace(number, ''),
                         flags: flags.split(delim),
                         description,
                         file

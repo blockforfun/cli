@@ -33,10 +33,10 @@ const build = async (repo, url, path, options) => {
         log('Dropping old entries...\n');
         await db.run('DROP TABLE IF EXISTS entries');
         log('Creating new entries...\n');
-        await db.run('CREATE TABLE entries (id INT, flags VARCHAR, description VARCHAR)');
+        await db.run('CREATE TABLE entries (number VARCHAR, flags VARCHAR, description VARCHAR)');
         let count = 0;
         for await (const entry of repo.listEntries(await getTree(repo, url, options), options)) {
-            await db.run('INSERT INTO entries VALUES (?, ?, ?)', entry.id, entry.flags.join(','), entry.description);
+            await db.run('INSERT INTO entries VALUES (?, ?, ?)', entry.number, entry.flags.join(','), entry.description);
             count++;
         }
         log(`Wrote ${count} ${count === 1 ? 'row' : 'rows'}\n`);
