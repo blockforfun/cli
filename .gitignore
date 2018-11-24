@@ -1,3 +1,9 @@
-node_modules
 *.db
 *.sqlite
+*-debug.log
+*-error.log
+/.nyc_output
+/dist
+/tmp
+/yarn.lock
+node_modules

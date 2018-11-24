@@ -1,19 +1,70 @@
-# BlockFor.fun registry CLI
+@blockforfun/cli
+================
 
-Genrates sqlite3 database from a [BlockFor.fun registry](https://registry.blockfor.fun).
+BlockFor.fun CLI
+
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/@blockforfun/cli.svg)](https://npmjs.org/package/@blockforfun/cli)
+[![Downloads/week](https://img.shields.io/npm/dw/@blockforfun/cli.svg)](https://npmjs.org/package/@blockforfun/cli)
+[![License](https://img.shields.io/npm/l/@blockforfun/cli.svg)](https://github.com/blockforfun/cli/blob/master/package.json)
+
+<!-- toc -->
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
+# Usage
+<!-- usage -->
+```sh-session
+$ npm install -g @blockforfun/cli
+$ blockfun COMMAND
+running command...
+$ blockfun (-v|--version|version)
+@blockforfun/cli/0.0.0 win32-x64 node-v10.10.0
+$ blockfun --help [COMMAND]
+USAGE
+  $ blockfun COMMAND
+...
+```
+<!-- usagestop -->
+# Commands
+<!-- commands -->
+* [`blockfun build TARGET SOURCE`](#blockfun-build-target-source)
+* [`blockfun help [COMMAND]`](#blockfun-help-command)
+
+## `blockfun build TARGET SOURCE`
+
+Builds sqlite3 database from a BlockFor.fun git registry.
 
 ```
-index.js $target $source $ref $refs $fetch
+USAGE
+  $ blockfun build TARGET SOURCE
+
+ARGUMENTS
+  TARGET  path to target sqlite3 database
+  SOURCE  git source repository URL or path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch repository URL
+  -r, --ref=ref      [default: refs/heads/master] git ref to read from
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-* `$target`: sqlite db
-* `$source`: path or url to `git` repository
-* `$ref` (optional - default: `refs/heads/master`): tree ref to read from
-* `$refs` (optional - default: `refs/heads/*:refs/heads/*`): refspec to fetch
-* `$fetch` (optional): url to force fetch
+_See code: [commands\build.js](https://github.com/blockforfun/registry/blob/v0.0.0/commands\build.js)_
 
-## Example
+## `blockfun help [COMMAND]`
+
+display help for blockfun
 
 ```
-node index.js ./root.db https://github.com/blockforfun/registry.git refs/heads/first-attempt
+USAGE
+  $ blockfun help [COMMAND]
+
+ARGUMENTS
+  COMMAND  command to show help for
+
+OPTIONS
+  --all  see all commands in CLI
 ```
+
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src\commands\help.ts)_
+<!-- commandsstop -->
