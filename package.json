@@ -30,6 +30,7 @@
   },
   "files": [
     "/bin",
+    "/commands",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
