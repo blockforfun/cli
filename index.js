@@ -45,20 +45,16 @@ const build = async (repo, url, path, options) => {
         log(`Closing ${path}...\n`);
         await db.close();
     }
+    return db;
 };
 
-try {
+new Promise((resolve, reject) => {
     if (!SOURCE || !TARGET) {
-        throw new Error('You must provide both SOURCE and TARGET');
+        reject(new Error('You must provide both SOURCE and TARGET'));
     }
-    
-    const source = parse(SOURCE);
-
-    build(source.protocol ? new MemRepo() : new FsRepo(source.path), source, TARGET, { fetch: FETCH });
-}
-catch (e) {
-    log(`Error: ${e.message}\n`);
-}
-finally {
-    log('Done.\n');
-}
+    else {
+        resolve(parse(SOURCE));
+    }
+})
+.then(source => build(source.protocol ? new MemRepo() : new FsRepo(source.path), source, TARGET, { fetch: FETCH }))
+.then(() => log('Done.\n'), e => log(`Error: ${e.message}\n`));
