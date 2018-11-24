@@ -1,7 +1,7 @@
 const {parse} = require('url')
 const sqlite = require('sqlite')
 const {Command, flags} = require('@oclif/command')
-const {MemRepo, FsRepo} = require('../repo')
+const {MemRepo, FsRepo} = require('../lib/repo')
 
 class BuildCommand extends Command {
   async fetch(repo, url, options) {
