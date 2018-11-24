@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/blockforfun/registry/compare/v0.0.0...v1.0.0) (2018-11-24)
+
+
+### Code Refactoring
+
+* Return number as array from listEntries ([3e587ed](https://github.com/blockforfun/registry/commit/3e587ed))
+
+
+### Features
+
+* Upgraded to OCLIF ([e6813ad](https://github.com/blockforfun/registry/commit/e6813ad))
+
+
+### BREAKING CHANGES
+
+* This CLI arguments - beware
+* This breaks the shape of emitted entries from `listEntries`
+
+
+
 <a name="0.0.0"></a>
 # 0.0.0 (2018-11-24)
 
