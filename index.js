@@ -13,7 +13,7 @@ const fetch = async (repo, url, options) => {
     return repo.fetch(url, refs, { progress: log });
 }
 
-const getTree = async (repo, url, options = { ref: REF, refs: REFS }) => {
+const tree = async (repo, url, options = { ref: REF, refs: REFS }) => {
     const { ref = REF, fetch: _fetch = url.href } = options;
     if (!url.protocol) {
         log(`Mounting ${url.href}\n`);
@@ -22,8 +22,11 @@ const getTree = async (repo, url, options = { ref: REF, refs: REFS }) => {
         await fetch(repo, _fetch, options);
     }
     log(`Reading from ${ref}...\n`);
-    const { body: { tree } } = await repo.loadObject(await repo.getRef(ref));
-    return tree;
+    const object  = await repo.loadObject(await repo.getRef(ref));
+    if (!object) {
+        throw new Error(`Can't find ${ref}`);
+    }
+    return object.body.tree;
 }
 
 const build = async (repo, url, path, options) => {
@@ -35,7 +38,7 @@ const build = async (repo, url, path, options) => {
         log('Creating new entries...\n');
         await db.run('CREATE TABLE entries (number VARCHAR, flags VARCHAR, description VARCHAR)');
         let count = 0;
-        for await (const entry of repo.listEntries(await getTree(repo, url, options), options)) {
+        for await (const entry of repo.listEntries(await tree(repo, url, options), options)) {
             await db.run('INSERT INTO entries VALUES (?, ?, ?)', entry.number, entry.flags.join(','), entry.description);
             count++;
         }
@@ -57,4 +60,4 @@ new Promise((resolve, reject) => {
     }
 })
 .then(source => build(source.protocol ? new MemRepo() : new FsRepo(source.path), source, TARGET, { fetch: FETCH }))
-.then(() => log('Done.\n'), e => log(`Error: ${e.message}\n`));
+.then(() => log('Done\n'), e => log(e.message));
