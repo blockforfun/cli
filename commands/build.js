@@ -58,7 +58,7 @@ class BuildCommand extends Command {
   }
 }
 
-BuildCommand.description = 'Builds sqlite3 database from a BlockFor.fun git registry.'
+BuildCommand.description = 'builds sqlite3 database from a BlockFor.fun git registry.'
 BuildCommand.args = [
   {
     name: 'target',
