@@ -1,23 +1,24 @@
 const { isMatch } = require('micromatch');
 
 const GLOB = '**/*.txt';
+const EXT = /\.txt$/g;
 const DELIM = /[,\s]+/;
-const NUMBER = /\/|\.txt$/g;
 
 module.exports = entriesMixin = repo => {
     return class EntriesRepo extends repo {
         constructor(...args) {
             super(...args);
         }
-        async *listEntries(tree, options = { glob: GLOB, number: NUMBER, delim: DELIM }) {
-            const { glob = GLOB, number = NUMBER, delim = DELIM } = options;
+        async *listEntries(tree, options = { glob: GLOB, ext: EXT, delim: DELIM }) {
+            const { glob = GLOB, ext = EXT, delim = DELIM } = options;
             for await (const file of super.listFiles(tree)) {
-                const path = file.path.join('/');
-                if (isMatch(path, glob)) {
+                const { path } = file;
+                if (isMatch(path.join('/'), glob)) {
                     const body = await super.loadText(file.hash);
                     const [ flags, description ] = body.split('\n');
+                    path.push(path.pop().replace(ext, ''));
                     yield {
-                        number: path.replace(number, ''),
+                        number: path,
                         flags: flags.split(delim),
                         description,
                         file

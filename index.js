@@ -40,7 +40,7 @@ const build = async (repo, url, path, options) => {
         await db.run('CREATE TABLE entries (number VARCHAR, flags VARCHAR, description VARCHAR)');
         let count = 0;
         for await (const entry of repo.listEntries(await tree(repo, url, options), options)) {
-            await db.run('INSERT INTO entries VALUES (?, ?, ?)', entry.number, entry.flags.join(','), entry.description);
+            await db.run('INSERT INTO entries VALUES (?, ?, ?)', entry.number.join(''), entry.flags.join(','), entry.description);
             count++;
         }
         log(`Wrote ${count} ${count === 1 ? 'row' : 'rows'}\n`);
