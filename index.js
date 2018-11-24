@@ -1,4 +1,4 @@
-const { stdout } = process;
+const { stdout, stderr } = process;
 const { parse } = require('url');
 const sqlite = require('sqlite');
 const { MemRepo, FsRepo } = require('./repo');
@@ -6,6 +6,7 @@ const { MemRepo, FsRepo } = require('./repo');
 const [ TARGET, SOURCE, REF = 'refs/heads/master', REFS = 'refs/heads/*:refs/heads/*', FETCH ] = process.argv.slice(2);
 
 const log = str => stdout.write(str);
+const error = str => stderr.write(str);
 
 const fetch = async (repo, url, options) => {
     const { refs = REFS } = options;
@@ -51,7 +52,7 @@ const build = async (repo, url, path, options) => {
     return db;
 };
 
-new Promise((resolve, reject) => {
+process.exitCode = new Promise((resolve, reject) => {
     if (!SOURCE || !TARGET) {
         reject(new Error('You must provide both SOURCE and TARGET'));
     }
@@ -60,4 +61,4 @@ new Promise((resolve, reject) => {
     }
 })
 .then(source => build(source.protocol ? new MemRepo() : new FsRepo(source.path), source, TARGET, { fetch: FETCH }))
-.then(() => log('Done\n'), e => log(e.message));
+.then(() => log('Done\n'), e => { error(e.message); return 1; });
