@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/blockforfun/cli/compare/v1.2.0...v2.0.0) (2018-11-25)
+
+
+### Features
+
+* Normalize ARGS order across plugins ([c4861e9](https://github.com/blockforfun/cli/commit/c4861e9))
+* Update README ([1bebfa0](https://github.com/blockforfun/cli/commit/1bebfa0))
+
+
+### BREAKING CHANGES
+
+* This changes the orde of SOURCE and TARGET for plugin-build
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/blockforfun/cli/compare/v1.1.1...v1.2.0) (2018-11-25)
 
