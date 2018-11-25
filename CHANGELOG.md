@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/blockforfun/cli/compare/v1.0.4...v1.1.0) (2018-11-25)
+
+
+### Bug Fixes
+
+* Don't lint node_modules ([21cf532](https://github.com/blockforfun/cli/commit/21cf532))
+
+
+### Features
+
+* Added plugin-build ([61b0803](https://github.com/blockforfun/cli/commit/61b0803))
+* Use plugin-build ([0a548ef](https://github.com/blockforfun/cli/commit/0a548ef))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/blockforfun/cli/compare/v1.0.3...v1.0.4) (2018-11-24)
 
