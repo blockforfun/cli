@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/blockforfun/cli/compare/v1.1.1...v1.2.0) (2018-11-25)
+
+
+### Bug Fixes
+
+* Corrected cli homepage ([3e831c9](https://github.com/blockforfun/cli/commit/3e831c9))
+
+
+### Features
+
+* Add plugin-git to CLI ([8d9135c](https://github.com/blockforfun/cli/commit/8d9135c))
+* Added plugin-git ([e341a6c](https://github.com/blockforfun/cli/commit/e341a6c))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/blockforfun/cli/compare/v1.1.0...v1.1.1) (2018-11-25)
 
