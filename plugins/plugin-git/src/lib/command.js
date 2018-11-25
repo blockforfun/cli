@@ -1,3 +1,4 @@
+const {parse} = require('url')
 const {Command, flags} = require('@oclif/command')
 
 class BaseCommand extends Command {
@@ -23,6 +24,15 @@ class BaseCommand extends Command {
     return object.body.tree
   }
 }
+
+BaseCommand.args = [
+  {
+    name: 'source',
+    description: 'git source repository URL or path',
+    parse: input => parse(input),
+    required: true,
+  },
+]
 
 BaseCommand.flags = {
   ref: flags.string({

@@ -1,4 +1,3 @@
-const {parse} = require('url')
 const BaseCommand = require('../lib/command')
 const {MemRepo, FsRepo} = require('../lib/repo')
 
@@ -24,14 +23,7 @@ class ListCommand extends BaseCommand {
 }
 
 ListCommand.description = 'lists entries in a BlockFor.fun git registry.'
-ListCommand.args = [
-  {
-    name: 'source',
-    description: 'git source repository URL or path',
-    parse: input => parse(input),
-    required: true,
-  },
-]
+ListCommand.args = BaseCommand.args
 ListCommand.flags = BaseCommand.flags
 
 module.exports = ListCommand
