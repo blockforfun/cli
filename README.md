@@ -1,3 +1,6 @@
+cli
+===
+
 BlockFor.fun CLI
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
