@@ -43,7 +43,7 @@
   "bugs": {
     "url": "https://github.com/blockforfun/cli/issues"
   },
-  "homepage": "https://blockfor.fun",
+  "homepage": "https://blockfor.fun/cli",
   "dependencies": {
     "@blockforfun/plugin-build": "^0.0.1",
     "@oclif/command": "^1.5.6",
