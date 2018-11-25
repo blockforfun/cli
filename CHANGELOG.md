@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/blockforfun/cli/compare/@blockforfun/cli@3.0.0...@blockforfun/cli@3.0.1) (2018-11-25)
+
+
+### Bug Fixes
+
+* Rebuild **/README.md ([2db584b](https://github.com/blockforfun/cli/commit/2db584b))
+
+
+
+
+
+
 # 3.0.0 (2018-11-25)
 
 

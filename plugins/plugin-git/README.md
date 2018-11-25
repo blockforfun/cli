@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/plugin-git
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-git/0.2.1 win32-x64 node-v10.10.0
+@blockforfun/plugin-git/0.2.2 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -48,7 +48,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [src\commands\json.js](https://github.com/blockforfun/cli/blob/v0.2.1/src\commands\json.js)_
+_See code: [src\commands\json.js](https://github.com/blockforfun/cli/blob/v0.2.2/src\commands\json.js)_
 
 ## `oclif-example list SOURCE`
 
@@ -67,5 +67,5 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [src\commands\list.js](https://github.com/blockforfun/cli/blob/v0.2.1/src\commands\list.js)_
+_See code: [src\commands\list.js](https://github.com/blockforfun/cli/blob/v0.2.2/src\commands\list.js)_
 <!-- commandsstop -->
