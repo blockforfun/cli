@@ -28,23 +28,25 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example hello`](#oclif-example-hello)
+* [`oclif-example build TARGET SOURCE`](#oclif-example-build-target-source)
 
-## `oclif-example hello`
+## `oclif-example build TARGET SOURCE`
 
-Describe the command here
+builds sqlite3 database from a BlockFor.fun git registry.
 
 ```
 USAGE
-  $ oclif-example hello
+  $ oclif-example build TARGET SOURCE
+
+ARGUMENTS
+  TARGET  path to target sqlite3 database
+  SOURCE  git source repository URL or path
 
 OPTIONS
-  -n, --name=name  name to print
-
-DESCRIPTION
-  ...
-  Extra documentation goes here
+  -f, --fetch=fetch  git fetch repository URL
+  -r, --ref=ref      [default: refs/heads/master] git ref to read from
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [src\commands\hello.js](https://github.com/blockforfun/cli/blob/v0.0.0/src\commands\hello.js)_
+_See code: [src\commands\build.js](https://github.com/blockforfun/cli/blob/v0.0.0/src\commands\build.js)_
 <!-- commandsstop -->
