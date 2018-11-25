@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/1.2.0 win32-x64 node-v10.10.0
+@blockforfun/cli/2.0.0 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND
@@ -28,21 +28,21 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`blockfun build TARGET SOURCE`](#blockfun-build-target-source)
+* [`blockfun build SOURCE TARGET`](#blockfun-build-source-target)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
 * [`blockfun list SOURCE`](#blockfun-list-source)
 
-## `blockfun build TARGET SOURCE`
+## `blockfun build SOURCE TARGET`
 
 builds sqlite3 database from a BlockFor.fun git registry.
 
 ```
 USAGE
-  $ blockfun build TARGET SOURCE
+  $ blockfun build SOURCE TARGET
 
 ARGUMENTS
-  TARGET  path to target sqlite3 database
   SOURCE  git source repository URL or path
+  TARGET  path to target sqlite3 database
 
 OPTIONS
   -f, --fetch=fetch  git fetch repository URL
@@ -50,7 +50,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v0.0.2/src\commands\build.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\build.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -86,5 +86,5 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v0.0.0/src\commands\list.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v0.1.0/src\commands\list.js)_
 <!-- commandsstop -->
