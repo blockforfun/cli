@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/1.1.0 win32-x64 node-v10.10.0
+@blockforfun/cli/1.1.1 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND
@@ -49,7 +49,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v0.0.0/src\commands\build.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v0.0.1/src\commands\build.js)_
 
 ## `blockfun help [COMMAND]`
 
