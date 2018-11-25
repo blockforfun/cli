@@ -46,7 +46,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [commands\build.js](https://github.com/blockforfun/cli/blob/v1.0.4/commands\build.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v0.0.0/src\commands\build.js)_
 
 ## `blockfun help [COMMAND]`
 
