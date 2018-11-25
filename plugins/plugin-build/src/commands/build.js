@@ -1,4 +1,3 @@
-const {parse} = require('url')
 const sqlite = require('sqlite')
 const BaseCommand = require('@blockforfun/plugin-git/src/lib/command')
 const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/lib/repo')
@@ -38,15 +37,10 @@ class BuildCommand extends BaseCommand {
 
 BuildCommand.description = 'builds sqlite3 database from a BlockFor.fun git registry.'
 BuildCommand.args = [
+  ...BaseCommand.args,
   {
     name: 'target',
     description: 'path to target sqlite3 database',
-    required: true,
-  },
-  {
-    name: 'source',
-    description: 'git source repository URL or path',
-    parse: input => parse(input),
     required: true,
   },
 ]
