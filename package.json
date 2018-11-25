@@ -1,13 +1,14 @@
 {
   "name": "@blockforfun/cli",
   "version": "1.0.4",
-  "description": "BlockFor.fun registry CLI",
+  "description": "BlockFor.fun CLI",
   "main": "index.js",
   "oclif": {
-    "commands": "./commands",
+    "scope": "blockforfun",
     "bin": "blockfun",
     "plugins": [
-      "@oclif/plugin-help"
+      "@oclif/plugin-help",
+      "@blockforfun/plugin-build"
     ]
   },
   "bin": {
@@ -26,12 +27,11 @@
     "url": "git+https://github.com/blockforfun/cli.git"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=8.0.0"
   },
   "files": [
     "/bin",
-    "/lib",
-    "/commands",
+    "/plugins",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
@@ -45,22 +45,10 @@
   },
   "homepage": "https://github.com/blockforfun/registry#readme",
   "dependencies": {
-    "@es-git/core": "^0.9.0",
-    "@es-git/fetch-mixin": "^0.9.0",
-    "@es-git/load-as-mixin": "^0.9.0",
-    "@es-git/memory-repo": "^0.9.0",
-    "@es-git/mix": "^0.9.0",
-    "@es-git/node-fs-repo": "^0.9.0",
-    "@es-git/object-mixin": "^0.9.0",
-    "@es-git/walkers-mixin": "^0.9.0",
-    "@es-git/zlib-mixin": "^0.9.0",
+    "@blockforfun/plugin-build": "^0.0.0",
     "@oclif/command": "^1.5.6",
     "@oclif/config": "^1.9.0",
-    "@oclif/plugin-help": "^2.1.4",
-    "babel-runtime": "^6.26.0",
-    "micromatch": "^3.1.10",
-    "node-fetch": "^2.3.0",
-    "sqlite": "^3.0.0"
+    "@oclif/plugin-help": "^2.1.4"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.19.4",
