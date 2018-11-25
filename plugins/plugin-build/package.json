@@ -1,11 +1,11 @@
 {
   "name": "@blockforfun/plugin-build",
   "description": "BlockFor.fun CLI build plugin",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Mikael Karon <mikael@karon.se>",
   "bugs": "https://github.com/blockforfun/cli/issues",
   "dependencies": {
-    "@blockforfun/plugin-git": "0.1.0",
+    "@blockforfun/plugin-git": "^0.2.0",
     "sqlite": "^3.0.0"
   },
   "devDependencies": {
