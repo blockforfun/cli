@@ -1,6 +1,12 @@
 {
   "packages": [
-    "plugins/*"
+    "plugins/*",
+    "."
   ],
-  "version": "independent"
+  "version": "independent",
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.19.4",
+    "globby": "^8.0.1",
+    "rimraf": "^2.6.2"
+  }
 }
