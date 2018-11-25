@@ -31,6 +31,7 @@ USAGE
 <!-- commands -->
 * [`blockfun build SOURCE TARGET`](#blockfun-build-source-target)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
+* [`blockfun json SOURCE`](#blockfun-json-source)
 * [`blockfun list SOURCE`](#blockfun-list-source)
 
 ## `blockfun build SOURCE TARGET`
@@ -51,7 +52,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\build.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v2.0.0/src\commands\build.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -70,6 +71,25 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src\commands\help.ts)_
 
+## `blockfun json SOURCE`
+
+lists entries in a BlockFor.fun git registry.
+
+```
+USAGE
+  $ blockfun json SOURCE
+
+ARGUMENTS
+  SOURCE  git source repository URL or path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch repository URL
+  -r, --ref=ref      [default: refs/heads/master] git ref to read from
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+```
+
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v0.2.0/src\commands\json.js)_
+
 ## `blockfun list SOURCE`
 
 lists entries in a BlockFor.fun git registry.
@@ -87,5 +107,5 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v0.1.0/src\commands\list.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v0.2.0/src\commands\list.js)_
 <!-- commandsstop -->
