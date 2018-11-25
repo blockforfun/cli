@@ -1,5 +1,151 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# 3.0.0 (2018-11-25)
+
+
+### Bug Fixes
+
+* Add root project to lerna packages ([884df53](https://github.com/blockforfun/cli/commit/884df53))
+
+
+### Features
+
+* Added json command to plugins-git ([a69d82f](https://github.com/blockforfun/cli/commit/a69d82f))
+* Start managing monorepo with lerna ([d91a761](https://github.com/blockforfun/cli/commit/d91a761))
+* Use lerna for release management ([e5ceb9d](https://github.com/blockforfun/cli/commit/e5ceb9d))
+
+
+
+# 2.0.0 (2018-11-25)
+
+
+### Features
+
+* Normalize ARGS order across plugins ([c4861e9](https://github.com/blockforfun/cli/commit/c4861e9))
+* Update README ([1bebfa0](https://github.com/blockforfun/cli/commit/1bebfa0))
+
+
+### BREAKING CHANGES
+
+* This changes the orde of SOURCE and TARGET for plugin-build
+
+
+
+# 1.2.0 (2018-11-25)
+
+
+### Bug Fixes
+
+* Corrected cli homepage ([3e831c9](https://github.com/blockforfun/cli/commit/3e831c9))
+
+
+### Features
+
+* Add plugin-git to CLI ([8d9135c](https://github.com/blockforfun/cli/commit/8d9135c))
+* Added plugin-git ([e341a6c](https://github.com/blockforfun/cli/commit/e341a6c))
+
+
+
+## 1.1.1 (2018-11-25)
+
+
+### Bug Fixes
+
+* Update homepage in **/package.json ([60cfb60](https://github.com/blockforfun/cli/commit/60cfb60))
+
+
+
+# 1.1.0 (2018-11-25)
+
+
+### Bug Fixes
+
+* Don't lint node_modules ([21cf532](https://github.com/blockforfun/cli/commit/21cf532))
+
+
+### Features
+
+* Added plugin-build ([61b0803](https://github.com/blockforfun/cli/commit/61b0803))
+* Use plugin-build ([0a548ef](https://github.com/blockforfun/cli/commit/0a548ef))
+
+
+
+## 1.0.4 (2018-11-24)
+
+
+### Bug Fixes
+
+* Don't capitalize build command description ([4ab1ba9](https://github.com/blockforfun/cli/commit/4ab1ba9))
+* Fix git url in package.json ([58d5d47](https://github.com/blockforfun/cli/commit/58d5d47))
+
+
+
+## 1.0.3 (2018-11-24)
+
+
+### Bug Fixes
+
+* Make babel-runtime a runtime dep ([b3caa54](https://github.com/blockforfun/cli/commit/b3caa54))
+
+
+
+## 1.0.2 (2018-11-24)
+
+
+### Bug Fixes
+
+* Move non-command sources into lib ([bba3bd1](https://github.com/blockforfun/cli/commit/bba3bd1))
+
+
+
+## 1.0.1 (2018-11-24)
+
+
+### Bug Fixes
+
+* Make sure to package commands ([3f7e474](https://github.com/blockforfun/cli/commit/3f7e474))
+
+
+
+# 1.0.0 (2018-11-24)
+
+
+### Code Refactoring
+
+* Return number as array from listEntries ([3e587ed](https://github.com/blockforfun/cli/commit/3e587ed))
+
+
+### Features
+
+* Upgraded to OCLIF ([e6813ad](https://github.com/blockforfun/cli/commit/e6813ad))
+
+
+### BREAKING CHANGES
+
+* This CLI arguments - beware
+* This breaks the shape of emitted entries from `listEntries`
+
+
+
+# 0.0.0 (2018-11-24)
+
+
+### Features
+
+* Added README ([f71090e](https://github.com/blockforfun/cli/commit/f71090e))
+* Detect invalid REF ([f1671b2](https://github.com/blockforfun/cli/commit/f1671b2))
+* Exit with errorCode ([bbeb76d](https://github.com/blockforfun/cli/commit/bbeb76d))
+* Use standard-version for release management ([65a3263](https://github.com/blockforfun/cli/commit/65a3263))
+
+
+
+
+
+# Change Log
+
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="2.0.0"></a>
