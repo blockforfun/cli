@@ -1,12 +1,12 @@
 @blockforfun/plugin-git
-=========================
+===
 
 BlockFor.fun CLI git plugin
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/@blockforfun/plugin-build.svg)](https://npmjs.org/package/@blockforfun/plugin-build)
-[![Downloads/week](https://img.shields.io/npm/dw/@blockforfun/plugin-build.svg)](https://npmjs.org/package/@blockforfun/plugin-build)
-[![License](https://img.shields.io/npm/l/@blockforfun/plugin-build.svg)](https://github.com/blockforfun/cli/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/@blockforfun/plugin-git.svg)](https://npmjs.org/package/@blockforfun/plugin-git)
+[![Downloads/week](https://img.shields.io/npm/dw/@blockforfun/plugin-git.svg)](https://npmjs.org/package/@blockforfun/plugin-git)
+[![License](https://img.shields.io/npm/l/@blockforfun/cli.svg)](https://github.com/blockforfun/cli/blob/master/plugins/plugin-git/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
