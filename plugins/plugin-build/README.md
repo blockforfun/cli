@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/plugin-build
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-build/0.0.2 win32-x64 node-v10.10.0
+@blockforfun/plugin-build/1.0.0 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -28,19 +28,19 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example build TARGET SOURCE`](#oclif-example-build-target-source)
+* [`oclif-example build SOURCE TARGET`](#oclif-example-build-source-target)
 
-## `oclif-example build TARGET SOURCE`
+## `oclif-example build SOURCE TARGET`
 
 builds sqlite3 database from a BlockFor.fun git registry.
 
 ```
 USAGE
-  $ oclif-example build TARGET SOURCE
+  $ oclif-example build SOURCE TARGET
 
 ARGUMENTS
-  TARGET  path to target sqlite3 database
   SOURCE  git source repository URL or path
+  TARGET  path to target sqlite3 database
 
 OPTIONS
   -f, --fetch=fetch  git fetch repository URL
@@ -48,5 +48,5 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [src\commands\build.js](https://github.com/blockforfun/cli/blob/v0.0.2/src\commands\build.js)_
+_See code: [src\commands\build.js](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\build.js)_
 <!-- commandsstop -->
