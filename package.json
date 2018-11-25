@@ -8,6 +8,7 @@
     "bin": "blockfun",
     "plugins": [
       "@oclif/plugin-help",
+      "@blockforfun/plugin-git",
       "@blockforfun/plugin-build"
     ]
   },
@@ -45,7 +46,8 @@
   },
   "homepage": "https://blockfor.fun/cli",
   "dependencies": {
-    "@blockforfun/plugin-build": "^0.0.1",
+    "@blockforfun/plugin-build": "0.0.2",
+    "@blockforfun/plugin-git": "0.0.0",
     "@oclif/command": "^1.5.6",
     "@oclif/config": "^1.9.0",
     "@oclif/plugin-help": "^2.1.4"
