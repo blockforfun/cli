@@ -36,7 +36,7 @@
     "/src",
     "/yarn.lock"
   ],
-  "homepage": "https://github.com/blockforfun/cli",
+  "homepage": "https://blockfor.fun/cli/plugins/plugin-build",
   "keywords": [
     "oclif-plugin"
   ],
