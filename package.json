@@ -57,6 +57,7 @@
     "eslint": "^5.9.0",
     "eslint-config-oclif": "^3.1.0",
     "globby": "^8.0.1",
+    "lerna": "^3.4.3",
     "rimraf": "^2.6.2",
     "standard-version": "^4.4.0"
   }
