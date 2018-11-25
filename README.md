@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/1.1.1 win32-x64 node-v10.10.0
+@blockforfun/cli/1.2.0 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND
@@ -30,6 +30,7 @@ USAGE
 <!-- commands -->
 * [`blockfun build TARGET SOURCE`](#blockfun-build-target-source)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
+* [`blockfun list SOURCE`](#blockfun-list-source)
 
 ## `blockfun build TARGET SOURCE`
 
@@ -49,7 +50,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v0.0.1/src\commands\build.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v0.0.2/src\commands\build.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -67,4 +68,23 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src\commands\help.ts)_
+
+## `blockfun list SOURCE`
+
+lists entries in a BlockFor.fun git registry.
+
+```
+USAGE
+  $ blockfun list SOURCE
+
+ARGUMENTS
+  SOURCE  git source repository URL or path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch repository URL
+  -r, --ref=ref      [default: refs/heads/master] git ref to read from
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+```
+
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v0.0.0/src\commands\list.js)_
 <!-- commandsstop -->
