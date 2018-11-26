@@ -1,24 +1,26 @@
 const {createWriteStream} = require('fs')
-const BaseCommand = require('../lib/command')
-const {MemRepo, FsRepo} = require('../lib/repo')
+const BaseCommand = require('../../lib/command')
+const {MemRepo, FsRepo} = require('../../lib/repo')
 
-class JsonCommand extends BaseCommand {
+class ListCommand extends BaseCommand {
   async list(repo, url, target, options) {
     const log = target ? message => target.write(`${message}\n`) : this.log
     try {
       let count = 0
       for await (const entry of repo.listEntries(await this.tree(repo, url, options), options)) {
-        log(JSON.stringify(entry))
+        log(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
         count++
       }
-      this.log(`Listed ${count} ${count === 1 ? 'entry' : 'entries'}`)
+      this.log(`${target ? 'Wrote' : 'Listed'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } finally {
-      target.end()
+      if (target) {
+        target.end()
+      }
     }
   }
 
   async run() {
-    const {args, flags} = this.parse(JsonCommand)
+    const {args, flags} = this.parse(ListCommand)
     const {source, target} = args
     try {
       await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
@@ -28,8 +30,8 @@ class JsonCommand extends BaseCommand {
   }
 }
 
-JsonCommand.description = 'lists entries in a BlockFor.fun git registry.'
-JsonCommand.args = [
+ListCommand.description = 'lists entries in text from a BlockFor.fun git registry.'
+ListCommand.args = [
   ...BaseCommand.args,
   {
     name: 'target',
@@ -37,6 +39,7 @@ JsonCommand.args = [
     parse: input => createWriteStream(input),
   },
 ]
-JsonCommand.flags = BaseCommand.flags
+ListCommand.flags = BaseCommand.flags
+ListCommand.aliases = ['ls', 'ls:text']
 
-module.exports = JsonCommand
+module.exports = ListCommand
