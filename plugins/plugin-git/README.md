@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/plugin-git
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-git/0.2.2 win32-x64 node-v10.10.0
+@blockforfun/plugin-git/1.0.0 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -28,44 +28,78 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example json SOURCE`](#oclif-example-json-source)
-* [`oclif-example list SOURCE`](#oclif-example-list-source)
+* [`oclif-example list SOURCE [TARGET]`](#oclif-example-list-source-target)
+* [`oclif-example list:json SOURCE [TARGET]`](#oclif-example-listjson-source-target)
+* [`oclif-example list:text SOURCE [TARGET]`](#oclif-example-listtext-source-target)
 
-## `oclif-example json SOURCE`
+## `oclif-example list SOURCE [TARGET]`
 
-lists entries in a BlockFor.fun git registry.
+lists entries in text from a BlockFor.fun git registry.
 
 ```
 USAGE
-  $ oclif-example json SOURCE
+  $ oclif-example list SOURCE [TARGET]
 
 ARGUMENTS
   SOURCE  git source repository URL or path
+  TARGET  path to target json file
 
 OPTIONS
   -f, --fetch=fetch  git fetch repository URL
   -r, --ref=ref      [default: refs/heads/master] git ref to read from
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+
+ALIASES
+  $ oclif-example ls
+  $ oclif-example ls:text
 ```
 
-_See code: [src\commands\json.js](https://github.com/blockforfun/cli/blob/v0.2.2/src\commands\json.js)_
+_See code: [src\commands\list\index.js](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\list\index.js)_
 
-## `oclif-example list SOURCE`
+## `oclif-example list:json SOURCE [TARGET]`
 
-lists entries in a BlockFor.fun git registry.
+lists entries in json from a BlockFor.fun git registry.
 
 ```
 USAGE
-  $ oclif-example list SOURCE
+  $ oclif-example list:json SOURCE [TARGET]
 
 ARGUMENTS
   SOURCE  git source repository URL or path
+  TARGET  path to target json file
 
 OPTIONS
   -f, --fetch=fetch  git fetch repository URL
   -r, --ref=ref      [default: refs/heads/master] git ref to read from
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+
+ALIASES
+  $ oclif-example ls:json
 ```
 
-_See code: [src\commands\list.js](https://github.com/blockforfun/cli/blob/v0.2.2/src\commands\list.js)_
+_See code: [src\commands\list\json.js](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\list\json.js)_
+
+## `oclif-example list:text SOURCE [TARGET]`
+
+lists entries in text from a BlockFor.fun git registry.
+
+```
+USAGE
+  $ oclif-example list:text SOURCE [TARGET]
+
+ARGUMENTS
+  SOURCE  git source repository URL or path
+  TARGET  path to target json file
+
+OPTIONS
+  -f, --fetch=fetch  git fetch repository URL
+  -r, --ref=ref      [default: refs/heads/master] git ref to read from
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+
+ALIASES
+  $ oclif-example ls
+  $ oclif-example ls:text
+```
+
+_See code: [src\commands\list\text.js](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\list\text.js)_
 <!-- commandsstop -->

@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/3.0.1 win32-x64 node-v10.10.0
+@blockforfun/cli/4.0.0 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND

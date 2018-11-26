@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@2.0.2...@blockforfun/plugin-build@2.0.3) (2018-11-26)
+
+
+### Bug Fixes
+
+* Fix README (again) ([13d36ed](https://github.com/blockforfun/cli/commit/13d36ed))
+
+
+
+
+
+
 ## [2.0.2](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@2.0.1...@blockforfun/plugin-build@2.0.2) (2018-11-25)
 
 

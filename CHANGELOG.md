@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@3.0.1...@blockforfun/cli@4.0.0) (2018-11-26)
+
+
+### Bug Fixes
+
+* Fix README (again) ([13d36ed](https://github.com/blockforfun/cli/commit/13d36ed))
+
+
+### Features
+
+* Added json file serialization to plugin-git ([0322337](https://github.com/blockforfun/cli/commit/0322337))
+* Restructure plugin-git to sub-commands ([3988ac8](https://github.com/blockforfun/cli/commit/3988ac8))
+
+
+### BREAKING CHANGES
+
+* This moves the json command to list:json
+
+
+
+
+
+
 ## [3.0.1](https://github.com/blockforfun/cli/compare/@blockforfun/cli@3.0.0...@blockforfun/cli@3.0.1) (2018-11-25)
 
 
