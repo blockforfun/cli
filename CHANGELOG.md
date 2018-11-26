@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/blockforfun/cli/compare/@blockforfun/cli@4.0.0...@blockforfun/cli@4.0.1) (2018-11-26)
+
+
+### Bug Fixes
+
+* Update plugin versions ([b14adf0](https://github.com/blockforfun/cli/commit/b14adf0))
+
+
+
+
+
 # [4.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@3.0.1...@blockforfun/cli@4.0.0) (2018-11-26)
 
 

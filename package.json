@@ -1,6 +1,6 @@
 {
   "name": "@blockforfun/cli",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "BlockFor.fun CLI",
   "main": "index.js",
   "oclif": {
