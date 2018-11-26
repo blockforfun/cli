@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.2](https://github.com/blockforfun/cli/compare/@blockforfun/cli@4.0.1...@blockforfun/cli@4.0.2) (2018-11-26)
+
+
+### Bug Fixes
+
+* Don't expose separate 'list' command in plugin-git ([162e77d](https://github.com/blockforfun/cli/commit/162e77d))
+* Unfuxk README ([46e56f2](https://github.com/blockforfun/cli/commit/46e56f2))
+* Use version ranges for plugins ([655c853](https://github.com/blockforfun/cli/commit/655c853))
+
+
+
+
+
 ## [4.0.1](https://github.com/blockforfun/cli/compare/@blockforfun/cli@4.0.0...@blockforfun/cli@4.0.1) (2018-11-26)
 
 

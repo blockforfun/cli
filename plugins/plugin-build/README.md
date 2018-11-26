@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/plugin-build
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-build/2.0.3 win32-x64 node-v10.10.0
+@blockforfun/plugin-build/2.0.4 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -48,5 +48,5 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [src\commands\build.js](https://github.com/blockforfun/cli/blob/v2.0.3/src\commands\build.js)_
+_See code: [src\commands\build.js](https://github.com/blockforfun/cli/blob/v2.0.4/src\commands\build.js)_
 <!-- commandsstop -->

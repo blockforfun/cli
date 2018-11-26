@@ -19,7 +19,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/4.0.1 win32-x64 node-v10.10.0
+@blockforfun/cli/4.0.2 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND
@@ -30,7 +30,6 @@ USAGE
 <!-- commands -->
 * [`blockfun build SOURCE TARGET`](#blockfun-build-source-target)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
-* [`blockfun list SOURCE [TARGET]`](#blockfun-list-source-target)
 * [`blockfun list:json SOURCE [TARGET]`](#blockfun-listjson-source-target)
 * [`blockfun list:text SOURCE [TARGET]`](#blockfun-listtext-source-target)
 
@@ -52,7 +51,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v2.0.3/src\commands\build.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v2.0.4/src\commands\build.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -70,30 +69,6 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src\commands\help.ts)_
-
-## `blockfun list SOURCE [TARGET]`
-
-lists entries in text from a BlockFor.fun git registry.
-
-```
-USAGE
-  $ blockfun list SOURCE [TARGET]
-
-ARGUMENTS
-  SOURCE  git source repository URL or path
-  TARGET  path to target json file
-
-OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
-
-ALIASES
-  $ blockfun ls
-  $ blockfun ls:text
-```
-
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\list\index.js)_
 
 ## `blockfun list:json SOURCE [TARGET]`
 
@@ -116,7 +91,7 @@ ALIASES
   $ blockfun ls:json
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\list\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.0.1/src\commands\list\json.js)_
 
 ## `blockfun list:text SOURCE [TARGET]`
 
@@ -136,9 +111,11 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 
 ALIASES
+  $ blockfun list
+  $ blockfun list:text
   $ blockfun ls
   $ blockfun ls:text
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.0.0/src\commands\list\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.0.1/src\commands\list\text.js)_
 <!-- commandsstop -->

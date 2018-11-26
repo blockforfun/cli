@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@1.0.0...@blockforfun/plugin-git@1.0.1) (2018-11-26)
+
+
+### Bug Fixes
+
+* Don't expose separate 'list' command in plugin-git ([162e77d](https://github.com/blockforfun/cli/commit/162e77d))
+
+
+
+
+
 # [1.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@0.2.2...@blockforfun/plugin-git@1.0.0) (2018-11-26)
 
 
