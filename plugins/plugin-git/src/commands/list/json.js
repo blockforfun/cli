@@ -18,7 +18,7 @@ class ListJsonCommand extends ListCommand {
   }
 }
 
-ListJsonCommand.description = 'lists entries in json from a BlockFor.fun git registry.'
+ListJsonCommand.description = 'lists entries in json from a BlockFor.fun git registry'
 ListJsonCommand.args = ListCommand.args
 ListJsonCommand.flags = ListCommand.flags
 ListJsonCommand.aliases = ['ls:json']

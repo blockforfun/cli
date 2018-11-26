@@ -30,7 +30,7 @@ class ListCommand extends BaseCommand {
   }
 }
 
-ListCommand.description = 'lists entries in text from a BlockFor.fun git registry.'
+ListCommand.description = 'lists entries in text from a BlockFor.fun git registry'
 ListCommand.args = [
   ...BaseCommand.args,
   {
