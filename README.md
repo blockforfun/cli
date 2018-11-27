@@ -1,7 +1,10 @@
 cli
 ===
 
-BlockFor.fun CLI
+BlockFor.fun CLI powered by:
+
+* [`@blockforfun/plugin-git`](https://blockfor.fun/plugins/plugin-git)
+* [`@blockforfun/plugin-build`](https://blockfor.fun/plugins/plugin-build)
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@blockforfun/cli.svg)](https://npmjs.org/package/@blockforfun/cli)
