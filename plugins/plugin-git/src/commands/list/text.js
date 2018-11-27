@@ -5,11 +5,11 @@ const {MemRepo, FsRepo} = require('../../lib/repo')
 class ListCommand extends GitCommand {
   async list(repo, url, options) {
     const {target} = options
-    const write = target ? message => target.write(`${message}\n`) : this.log
+    const log = target ? message => target.write(`${message}\n`) : this.log
     let count = 0
     try {
       for await (const entry of repo.listEntries(await this.tree(repo, url, options), options)) {
-        write(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
+        log(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
         count++
       }
     } finally {

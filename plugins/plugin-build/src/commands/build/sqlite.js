@@ -25,9 +25,9 @@ class BuildCommand extends GitCommand {
 
   async run() {
     const {args, flags} = this.parse(BuildCommand)
-    const {source, target} = args
+    const {source, target: path} = args
     try {
-      let count = await this.build(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
+      let count = await this.build(source.protocol ? new MemRepo() : new FsRepo(source.path), source, path, flags)
       this.log(`Wrote ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
