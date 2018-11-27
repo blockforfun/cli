@@ -6,6 +6,7 @@ BlockFor.fun CLI git plugin
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@blockforfun/plugin-git.svg)](https://npmjs.org/package/@blockforfun/plugin-git)
 [![Downloads/week](https://img.shields.io/npm/dw/@blockforfun/plugin-git.svg)](https://npmjs.org/package/@blockforfun/plugin-git)
+![GitHub All Releases](https://img.shields.io/github/downloads/@blockforfun/plugin-git/total.svg)
 [![License](https://img.shields.io/npm/l/@blockforfun/cli.svg)](https://github.com/blockforfun/cli/blob/master/plugins/plugin-git/package.json)
 
 <!-- toc -->
