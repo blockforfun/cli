@@ -20,7 +20,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/5.0.0 win32-x64 node-v10.10.0
+@blockforfun/cli/5.0.1 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND
@@ -88,7 +88,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\build\sqlite.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v3.0.1/src\commands\build\sqlite.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -128,7 +128,7 @@ ALIASES
   $ blockfun ls:json
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.1/src\commands\list\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.2/src\commands\list\json.js)_
 
 ## `blockfun list:text SOURCE [TARGET]`
 
@@ -152,7 +152,7 @@ ALIASES
   $ blockfun ls:text
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.1/src\commands\list\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.2/src\commands\list\text.js)_
 <!-- commandsstop -->
 * [`blockfun build:sqlite SOURCE TARGET`](#blockfun-buildsqlite-source-target)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
