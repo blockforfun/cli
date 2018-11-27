@@ -10,12 +10,14 @@ BlockFor.fun CLI
 [![License](https://img.shields.io/npm/l/@blockforfun/cli.svg?logo=github)](https://github.com/blockforfun/cli/blob/master/package.json)
 
 <!-- toc -->
-* [Bundled plugins](#bundled-plugins)
+* [Plugins](#plugins)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
 
-# Bundled plugins
+# Plugins
+
+Bundled plugins
 
 * [`@blockforfun/plugin-git`](plugins/plugin-git)
 * [`@blockforfun/plugin-build`](plugins/plugin-build)
