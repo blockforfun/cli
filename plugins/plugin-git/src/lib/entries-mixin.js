@@ -16,7 +16,7 @@ module.exports = repo => {
           path.push(path.pop().replace(ext, ''))
           yield {
             number: path,
-            flags: flags.split(delim),
+            flags: flags.split(delim).sort(),
             description,
             file,
           }
