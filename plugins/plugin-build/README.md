@@ -4,10 +4,10 @@
 BlockFor.fun CLI build plugin
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![GitHub](https://img.shields.io/badge/github-%40blockforfun%2Fplugin--build-lightgrey.svg)](https://github.com/blockforfun/cli/tree/master/plugins/plugin-build)
-[![Version](https://img.shields.io/npm/v/@blockforfun/plugin-build.svg)](https://npmjs.org/package/@blockforfun/plugin-build)
-[![Downloads/week](https://img.shields.io/npm/dw/@blockforfun/plugin-build.svg)](https://npmjs.org/package/@blockforfun/plugin-build)
-[![License](https://img.shields.io/npm/l/@blockforfun/plugin-build.svg)](https://github.com/blockforfun/cli/blob/master/plugins/plugin-build/package.json)
+[![GitHub](https://img.shields.io/badge/github-%40blockforfun%2Fcli-lightgrey.svg?logo=github)](https://github.com/blockforfun/cli/tree/master/plugins/plugin-build)
+[![Version](https://img.shields.io/npm/v/@blockforfun/plugin-build.svg?logo=npm)](https://npmjs.org/package/@blockforfun/plugin-build)
+[![Downloads/week](https://img.shields.io/npm/dw/@blockforfun/plugin-build.svg?logo=npm)](https://npmjs.org/package/@blockforfun/plugin-build)
+[![License](https://img.shields.io/npm/l/@blockforfun/plugin-build.svg?logo=github)](https://github.com/blockforfun/cli/blob/master/plugins/plugin-build/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
