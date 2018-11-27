@@ -1,8 +1,5 @@
 const {isMatch} = require('micromatch')
-
-const GLOB = '**/*.txt'
-const EXT = /\..+$/g
-const DELIM = /[,\s]+/
+const {GLOB, EXT, DELIM} = require('../consts')
 
 module.exports = repo => {
   return class EntriesRepo extends repo {
