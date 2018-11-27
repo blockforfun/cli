@@ -1,10 +1,7 @@
 cli
 ===
 
-BlockFor.fun CLI powered by:
-
-* [`@blockforfun/plugin-git`](plugins/plugin-git)
-* [`@blockforfun/plugin-build`](plugins/plugin-build)
+BlockFor.fun CLI
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![GitHub](https://img.shields.io/badge/github-%40blockforfun%2Fcli-lightgrey.svg?logo=github)](https://github.com/blockforfun/cli)
@@ -16,6 +13,11 @@ BlockFor.fun CLI powered by:
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+# Bundled
+
+* [`@blockforfun/plugin-git`](plugins/plugin-git)
+* [`@blockforfun/plugin-build`](plugins/plugin-build)
+
 # Usage
 <!-- usage -->
 ```sh-session
