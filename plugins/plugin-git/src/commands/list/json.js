@@ -1,6 +1,6 @@
-const ListCommand = require('./text')
+const ListTextCommand = require('./text')
 
-class ListJsonCommand extends ListCommand {
+class ListJsonCommand extends ListTextCommand {
   async list(repo, url, options) {
     const {target} = options
     const log = target ? message => target.write(`${message}\n`) : this.log
@@ -20,8 +20,8 @@ class ListJsonCommand extends ListCommand {
 }
 
 ListJsonCommand.description = 'lists entries in json format from a BlockFor.fun git registry'
-ListJsonCommand.args = ListCommand.args
-ListJsonCommand.flags = ListCommand.flags
+ListJsonCommand.args = ListTextCommand.args
+ListJsonCommand.flags = ListTextCommand.flags
 ListJsonCommand.aliases = ['ls:json']
 
 module.exports = ListJsonCommand

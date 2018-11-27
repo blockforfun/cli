@@ -2,7 +2,7 @@ const {createWriteStream} = require('fs')
 const GitCommand = require('../../lib/command')
 const {MemRepo, FsRepo} = require('../../lib/repo')
 
-class ListCommand extends GitCommand {
+class ListTextCommand extends GitCommand {
   async list(repo, url, options) {
     const {target} = options
     const log = target ? message => target.write(`${message}\n`) : this.log
@@ -21,7 +21,7 @@ class ListCommand extends GitCommand {
   }
 
   async run() {
-    const {args, flags} = this.parse(ListCommand)
+    const {args, flags} = this.parse(ListTextCommand)
     const {source, target} = args
     try {
       const count = await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, {target, ...flags})
@@ -32,8 +32,8 @@ class ListCommand extends GitCommand {
   }
 }
 
-ListCommand.description = 'lists entries in text format from a BlockFor.fun git registry'
-ListCommand.args = [
+ListTextCommand.description = 'lists entries in text format from a BlockFor.fun git registry'
+ListTextCommand.args = [
   ...GitCommand.args,
   {
     name: 'target',
@@ -41,7 +41,7 @@ ListCommand.args = [
     parse: input => createWriteStream(input),
   },
 ]
-ListCommand.flags = GitCommand.flags
-ListCommand.aliases = ['ls', 'ls:text']
+ListTextCommand.flags = GitCommand.flags
+ListTextCommand.aliases = ['ls', 'ls:text']
 
-module.exports = ListCommand
+module.exports = ListTextCommand
