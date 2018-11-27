@@ -1,7 +1,7 @@
 const {createWriteStream} = require('fs')
 const {blobToText} = require('@es-git/object-mixin')
-const GitCommand = require('../../lib/git-command')
-const {MemRepo, FsRepo} = require('../../lib/repo')
+const GitCommand = require('../../git-command')
+const {MemRepo, FsRepo} = require('../../repo')
 
 class ReadTextCommand extends GitCommand {
   async read(repo, url, path, options) {

@@ -1,5 +1,5 @@
 const {isMatch} = require('micromatch')
-const {GLOB, EXT, DELIM} = require('../consts')
+const {GLOB, EXT, DELIM} = require('./consts')
 
 module.exports = repo => {
   return class EntriesRepo extends repo {
