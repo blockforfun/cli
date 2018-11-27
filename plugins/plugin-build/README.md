@@ -13,7 +13,9 @@ BlockFor.fun CLI build plugin
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
 ```sh-session
 $ npm install -g @blockforfun/plugin-build
@@ -27,7 +29,9 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
 * [`oclif-example build:sqlite SOURCE TARGET`](#oclif-example-buildsqlite-source-target)
 

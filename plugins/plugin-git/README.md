@@ -13,7 +13,9 @@ BlockFor.fun CLI git plugin
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
 ```sh-session
 $ npm install -g @blockforfun/plugin-git
@@ -27,7 +29,9 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
 * [`oclif-example list:json SOURCE [TARGET]`](#oclif-example-listjson-source-target)
 * [`oclif-example list:text SOURCE [TARGET]`](#oclif-example-listtext-source-target)
