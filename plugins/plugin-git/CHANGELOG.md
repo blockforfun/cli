@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@1.1.3...@blockforfun/plugin-git@2.0.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* Update ARGS docs for list:text ([f3d3de1](https://github.com/blockforfun/cli/commit/f3d3de1))
+
+
+### Features
+
+* Implement read command ([f368823](https://github.com/blockforfun/cli/commit/f368823))
+* Slim down listEntries result ([bfd2b5c](https://github.com/blockforfun/cli/commit/bfd2b5c))
+
+
+### BREAKING CHANGES
+
+* This changes `list:json` output
+
+
+
+
+
 ## [1.1.3](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@1.1.2...@blockforfun/plugin-git@1.1.3) (2018-11-27)
 
 

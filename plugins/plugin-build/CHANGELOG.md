@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.3](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@3.0.2...@blockforfun/plugin-build@3.0.3) (2018-11-27)
+
+**Note:** Version bump only for package @blockforfun/plugin-build
+
+
+
+
+
 ## [3.0.2](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@3.0.1...@blockforfun/plugin-build@3.0.2) (2018-11-27)
 
 

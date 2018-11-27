@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@5.0.2...@blockforfun/cli@6.0.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* Update ARGS docs for list:text ([f3d3de1](https://github.com/blockforfun/cli/commit/f3d3de1))
+
+
+### Features
+
+* Implement read command ([f368823](https://github.com/blockforfun/cli/commit/f368823))
+* Slim down listEntries result ([bfd2b5c](https://github.com/blockforfun/cli/commit/bfd2b5c))
+
+
+### BREAKING CHANGES
+
+* This changes `list:json` output
+
+
+
+
+
 ## [5.0.2](https://github.com/blockforfun/cli/compare/@blockforfun/cli@5.0.1...@blockforfun/cli@5.0.2) (2018-11-27)
 
 
