@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@4.1.0...@blockforfun/cli@5.0.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* Add description for top-level list command ([e65a60b](https://github.com/blockforfun/cli/commit/e65a60b))
+* Clean up README ([ff79d5b](https://github.com/blockforfun/cli/commit/ff79d5b))
+* Don't take ownership of list alias ([ea6871c](https://github.com/blockforfun/cli/commit/ea6871c))
+
+
+### Features
+
+* Move build command to build:sqlite ([54b300f](https://github.com/blockforfun/cli/commit/54b300f))
+
+
+### BREAKING CHANGES
+
+* This moves the `build` command to `build:sqlite`
+
+
+
+
+
 # [4.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@4.0.2...@blockforfun/cli@4.1.0) (2018-11-27)
 
 

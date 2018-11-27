@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@2.0.5...@blockforfun/plugin-build@3.0.0) (2018-11-27)
+
+
+### Bug Fixes
+
+* Clean up README ([ff79d5b](https://github.com/blockforfun/cli/commit/ff79d5b))
+
+
+### Features
+
+* Move build command to build:sqlite ([54b300f](https://github.com/blockforfun/cli/commit/54b300f))
+
+
+### BREAKING CHANGES
+
+* This moves the `build` command to `build:sqlite`
+
+
+
+
+
 ## [2.0.5](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@2.0.4...@blockforfun/plugin-build@2.0.5) (2018-11-27)
 
 

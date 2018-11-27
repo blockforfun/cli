@@ -9,8 +9,7 @@ BlockFor.fun CLI
 [![License](https://img.shields.io/npm/l/@blockforfun/cli.svg)](https://github.com/blockforfun/cli/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
 <!-- tocstop -->
 # Usage
 <!-- usage -->
@@ -19,7 +18,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/4.1.0 win32-x64 node-v10.10.0
+@blockforfun/cli/5.0.0 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND
@@ -28,18 +27,18 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`blockfun build SOURCE TARGET`](#blockfun-build-source-target)
+* [`blockfun build:sqlite SOURCE TARGET`](#blockfun-buildsqlite-source-target)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
 * [`blockfun list:json SOURCE [TARGET]`](#blockfun-listjson-source-target)
 * [`blockfun list:text SOURCE [TARGET]`](#blockfun-listtext-source-target)
 
-## `blockfun build SOURCE TARGET`
+## `blockfun build:sqlite SOURCE TARGET`
 
 builds sqlite3 database from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun build SOURCE TARGET
+  $ blockfun build:sqlite SOURCE TARGET
 
 ARGUMENTS
   SOURCE  git source repository URL or path
@@ -51,7 +50,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v2.0.5/src\commands\build.js)_
+_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\build\sqlite.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -91,7 +90,7 @@ ALIASES
   $ blockfun ls:json
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.0/src\commands\list\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.1/src\commands\list\json.js)_
 
 ## `blockfun list:text SOURCE [TARGET]`
 
@@ -111,10 +110,9 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 
 ALIASES
-  $ blockfun list
   $ blockfun ls
   $ blockfun ls:text
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.0/src\commands\list\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v1.1.1/src\commands\list\text.js)_
 <!-- commandsstop -->

@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@1.1.0...@blockforfun/plugin-git@1.1.1) (2018-11-27)
+
+
+### Bug Fixes
+
+* Add description for top-level list command ([e65a60b](https://github.com/blockforfun/cli/commit/e65a60b))
+* Clean up README ([ff79d5b](https://github.com/blockforfun/cli/commit/ff79d5b))
+* Don't take ownership of list alias ([ea6871c](https://github.com/blockforfun/cli/commit/ea6871c))
+
+
+
+
+
 # [1.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@1.0.1...@blockforfun/plugin-git@1.1.0) (2018-11-27)
 
 

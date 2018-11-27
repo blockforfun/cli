@@ -9,8 +9,7 @@ BlockFor.fun CLI build plugin
 [![License](https://img.shields.io/npm/l/@blockforfun/plugin-build.svg)](https://github.com/blockforfun/cli/blob/master/plugins/plugin-build/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
 <!-- tocstop -->
 # Usage
 <!-- usage -->
@@ -19,7 +18,7 @@ $ npm install -g @blockforfun/plugin-build
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-build/2.0.5 win32-x64 node-v10.10.0
+@blockforfun/plugin-build/3.0.0 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -28,15 +27,15 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`oclif-example build SOURCE TARGET`](#oclif-example-build-source-target)
+* [`oclif-example build:sqlite SOURCE TARGET`](#oclif-example-buildsqlite-source-target)
 
-## `oclif-example build SOURCE TARGET`
+## `oclif-example build:sqlite SOURCE TARGET`
 
 builds sqlite3 database from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example build SOURCE TARGET
+  $ oclif-example build:sqlite SOURCE TARGET
 
 ARGUMENTS
   SOURCE  git source repository URL or path
@@ -48,5 +47,5 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [src\commands\build.js](https://github.com/blockforfun/cli/blob/v2.0.5/src\commands\build.js)_
+_See code: [src\commands\build\sqlite.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\build\sqlite.js)_
 <!-- commandsstop -->
