@@ -37,7 +37,7 @@ ListCommand.args = [
   ...GitCommand.args,
   {
     name: 'target',
-    description: 'path to target json file',
+    description: 'path to target text file',
     parse: input => createWriteStream(input),
   },
 ]
