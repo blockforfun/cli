@@ -1,5 +1,5 @@
 const sqlite = require('sqlite')
-const GitCommand = require('@blockforfun/plugin-git/src/lib/command')
+const GitCommand = require('@blockforfun/plugin-git/src/lib/git-command')
 const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/lib/repo')
 
 class BuildSQLiteCommand extends GitCommand {

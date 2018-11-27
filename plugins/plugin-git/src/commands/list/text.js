@@ -1,5 +1,5 @@
 const {createWriteStream} = require('fs')
-const GitCommand = require('../../lib/command')
+const GitCommand = require('../../lib/git-command')
 const {MemRepo, FsRepo} = require('../../lib/repo')
 
 class ListTextCommand extends GitCommand {
