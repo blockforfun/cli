@@ -7,9 +7,9 @@ BlockFor.fun CLI powered by:
 * [`@blockforfun/plugin-build`](plugins/plugin-build)
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![GitHub](https://img.shields.io/badge/github-%40blockforfun%2Fcli-lightgrey.svg)](https://github.com/blockforfun/cli)
 [![Version](https://img.shields.io/npm/v/@blockforfun/cli.svg)](https://npmjs.org/package/@blockforfun/cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@blockforfun/cli.svg)](https://npmjs.org/package/@blockforfun/cli)
-[![GitHub stars](https://img.shields.io/github/stars/blockforfun/cli.svg)](https://github.com/blockforfun/cli)
 [![License](https://img.shields.io/npm/l/@blockforfun/cli.svg)](https://github.com/blockforfun/cli/blob/master/package.json)
 
 <!-- toc -->
