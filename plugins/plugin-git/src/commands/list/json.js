@@ -1,7 +1,8 @@
 const ListCommand = require('./text')
 
 class ListJsonCommand extends ListCommand {
-  async list(repo, url, target, options) {
+  async list(repo, url, options) {
+    const {target} = options
     const write = target ? message => target.write(`${message}\n`) : this.log
     let count = 0
     try {

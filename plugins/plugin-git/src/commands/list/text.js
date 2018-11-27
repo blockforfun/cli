@@ -3,7 +3,8 @@ const GitCommand = require('../../lib/command')
 const {MemRepo, FsRepo} = require('../../lib/repo')
 
 class ListCommand extends GitCommand {
-  async list(repo, url, target, options) {
+  async list(repo, url, options) {
+    const {target} = options
     const write = target ? message => target.write(`${message}\n`) : this.log
     let count = 0
     try {
@@ -23,7 +24,7 @@ class ListCommand extends GitCommand {
     const {args, flags} = this.parse(ListCommand)
     const {source, target} = args
     try {
-      const count = await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
+      const count = await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, {target, ...flags})
       this.log(`${target ? 'Wrote' : 'Listed'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
