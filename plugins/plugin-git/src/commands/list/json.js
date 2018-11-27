@@ -3,18 +3,18 @@ const ListCommand = require('./text')
 class ListJsonCommand extends ListCommand {
   async list(repo, url, target, options) {
     const write = target ? message => target.write(`${message}\n`) : this.log
+    let count = 0
     try {
-      let count = 0
       for await (const entry of repo.listEntries(await this.tree(repo, url, options), options)) {
         write(JSON.stringify(entry))
         count++
       }
-      this.log(`Listed ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } finally {
       if (target) {
         target.end()
       }
     }
+    return count
   }
 }
 

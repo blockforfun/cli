@@ -5,25 +5,26 @@ const {MemRepo, FsRepo} = require('../../lib/repo')
 class ListCommand extends BaseCommand {
   async list(repo, url, target, options) {
     const write = target ? message => target.write(`${message}\n`) : this.log
+    let count = 0
     try {
-      let count = 0
       for await (const entry of repo.listEntries(await this.tree(repo, url, options), options)) {
         write(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
         count++
       }
-      this.log(`${target ? 'Wrote' : 'Listed'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } finally {
       if (target) {
         target.end()
       }
     }
+    return count
   }
 
   async run() {
     const {args, flags} = this.parse(ListCommand)
     const {source, target} = args
     try {
-      await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
+      const count = await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
+      this.log(`${target ? 'Wrote' : 'Listed'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
     }
