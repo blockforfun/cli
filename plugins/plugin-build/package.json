@@ -30,6 +30,9 @@
   "license": "MIT",
   "oclif": {
     "commands": "./src/commands",
+    "topics": {
+      "build": { "description": "builds databases from a BlockFor.fun git registry" }
+    },
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
