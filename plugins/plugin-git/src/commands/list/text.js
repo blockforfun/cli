@@ -41,6 +41,6 @@ ListCommand.args = [
   },
 ]
 ListCommand.flags = BaseCommand.flags
-ListCommand.aliases = ['list', 'list:text', 'ls', 'ls:text']
+ListCommand.aliases = ['list', 'ls', 'ls:text']
 
 module.exports = ListCommand
