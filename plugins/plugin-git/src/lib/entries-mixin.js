@@ -6,16 +6,17 @@ module.exports = repo => {
     async * listEntries(tree, options = {glob: GLOB, ext: EXT, delim: DELIM}) {
       const {glob = GLOB, ext = EXT, delim = DELIM} = options
       for await (const file of super.listFiles(tree)) {
-        const {path} = file
-        if (isMatch(path.join('/'), glob)) {
+        const {path: number} = file
+        const path = number.join('/')
+        if (isMatch(path, glob)) {
           const body = await super.loadText(file.hash)
           const [flags, description] = body.split('\n')
-          path.push(path.pop().replace(ext, ''))
+          number.push(number.pop().replace(ext, ''))
           yield {
-            number: path,
+            number,
             flags: flags.split(delim).sort(),
             description,
-            file,
+            path,
           }
         }
       }
