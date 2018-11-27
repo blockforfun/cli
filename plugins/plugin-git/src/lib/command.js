@@ -1,7 +1,7 @@
 const {parse} = require('url')
 const {Command, flags} = require('@oclif/command')
 
-class BaseCommand extends Command {
+class GitCommand extends Command {
   async fetch(repo, url, options) {
     const {spec} = options
     this.log(`Fetching ${spec} from ${url}`)
@@ -25,7 +25,7 @@ class BaseCommand extends Command {
   }
 }
 
-BaseCommand.args = [
+GitCommand.args = [
   {
     name: 'source',
     description: 'git source repository URL or path',
@@ -34,7 +34,7 @@ BaseCommand.args = [
   },
 ]
 
-BaseCommand.flags = {
+GitCommand.flags = {
   ref: flags.string({
     char: 'r',
     description: 'git ref to read from',
@@ -51,4 +51,4 @@ BaseCommand.flags = {
   }),
 }
 
-module.exports = BaseCommand
+module.exports = GitCommand

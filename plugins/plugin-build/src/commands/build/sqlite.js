@@ -1,8 +1,8 @@
 const sqlite = require('sqlite')
-const BaseCommand = require('@blockforfun/plugin-git/src/lib/command')
+const GitCommand = require('@blockforfun/plugin-git/src/lib/command')
 const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/lib/repo')
 
-class BuildCommand extends BaseCommand {
+class BuildCommand extends GitCommand {
   async build(repo, url, path, options) {
     this.log(`Opening ${path}...`)
     const db = await sqlite.open(path)
@@ -37,13 +37,13 @@ class BuildCommand extends BaseCommand {
 
 BuildCommand.description = 'builds sqlite3 database from a BlockFor.fun git registry'
 BuildCommand.args = [
-  ...BaseCommand.args,
+  ...GitCommand.args,
   {
     name: 'target',
     description: 'path to target sqlite3 database',
     required: true,
   },
 ]
-BuildCommand.flags = BaseCommand.flags
+BuildCommand.flags = GitCommand.flags
 
 module.exports = BuildCommand

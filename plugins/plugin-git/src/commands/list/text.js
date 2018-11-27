@@ -1,8 +1,8 @@
 const {createWriteStream} = require('fs')
-const BaseCommand = require('../../lib/command')
+const GitCommand = require('../../lib/command')
 const {MemRepo, FsRepo} = require('../../lib/repo')
 
-class ListCommand extends BaseCommand {
+class ListCommand extends GitCommand {
   async list(repo, url, target, options) {
     const write = target ? message => target.write(`${message}\n`) : this.log
     let count = 0
@@ -33,14 +33,14 @@ class ListCommand extends BaseCommand {
 
 ListCommand.description = 'lists entries in text format from a BlockFor.fun git registry'
 ListCommand.args = [
-  ...BaseCommand.args,
+  ...GitCommand.args,
   {
     name: 'target',
     description: 'path to target json file',
     parse: input => createWriteStream(input),
   },
 ]
-ListCommand.flags = BaseCommand.flags
+ListCommand.flags = GitCommand.flags
 ListCommand.aliases = ['ls', 'ls:text']
 
 module.exports = ListCommand
