@@ -22,7 +22,7 @@ $ npm install -g @blockforfun/plugin-git
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-git/2.0.0 win32-x64 node-v10.10.0
+@blockforfun/plugin-git/3.0.0 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -59,7 +59,7 @@ ALIASES
   $ oclif-example ls:json
 ```
 
-_See code: [src\commands\list\json.js](https://github.com/blockforfun/cli/blob/v2.0.0/src\commands\list\json.js)_
+_See code: [src\commands\list\json.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\list\json.js)_
 
 ## `oclif-example list:text SOURCE [TARGET]`
 
@@ -83,7 +83,7 @@ ALIASES
   $ oclif-example ls:text
 ```
 
-_See code: [src\commands\list\text.js](https://github.com/blockforfun/cli/blob/v2.0.0/src\commands\list\text.js)_
+_See code: [src\commands\list\text.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\list\text.js)_
 
 ## `oclif-example read:json SOURCE PATH [TARGET]`
 
@@ -107,7 +107,7 @@ ALIASES
   $ oclif-example get:json
 ```
 
-_See code: [src\commands\read\json.js](https://github.com/blockforfun/cli/blob/v2.0.0/src\commands\read\json.js)_
+_See code: [src\commands\read\json.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\read\json.js)_
 
 ## `oclif-example read:text SOURCE PATH [TARGET]`
 
@@ -132,5 +132,5 @@ ALIASES
   $ oclif-example get:text
 ```
 
-_See code: [src\commands\read\text.js](https://github.com/blockforfun/cli/blob/v2.0.0/src\commands\read\text.js)_
+_See code: [src\commands\read\text.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\read\text.js)_
 <!-- commandsstop -->

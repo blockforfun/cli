@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@2.0.0...@blockforfun/plugin-git@3.0.0) (2018-11-27)
+
+
+### Code Refactoring
+
+* Relocate files in and remove lib folder ([901ebb5](https://github.com/blockforfun/cli/commit/901ebb5))
+
+
+### BREAKING CHANGES
+
+* This changes paths in plugin-git
+
+
+
+
+
 # [2.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@1.1.3...@blockforfun/plugin-git@2.0.0) (2018-11-27)
 
 
