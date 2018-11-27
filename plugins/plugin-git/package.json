@@ -42,6 +42,9 @@
   "license": "MIT",
   "oclif": {
     "commands": "./src/commands",
+    "topics": {
+      "list": { "description": "lists entries from a BlockFor.fun git registry" }
+    },
     "bin": "oclif-example",
     "devPlugins": [
       "@oclif/plugin-help"
