@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@3.0.1...@blockforfun/plugin-build@3.0.2) (2018-11-27)
+
+
+### Bug Fixes
+
+* remove @ from GitHub badge link ([27ca1cb](https://github.com/blockforfun/cli/commit/27ca1cb))
+
+
+
+
+
 ## [3.0.1](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-build@3.0.0...@blockforfun/plugin-build@3.0.1) (2018-11-27)
 
 

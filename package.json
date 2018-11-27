@@ -1,6 +1,6 @@
 {
   "name": "@blockforfun/cli",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "BlockFor.fun CLI",
   "main": "index.js",
   "oclif": {
@@ -46,8 +46,8 @@
   },
   "homepage": "https://blockfor.fun/cli",
   "dependencies": {
-    "@blockforfun/plugin-build": "^3.0.1",
-    "@blockforfun/plugin-git": "^1.1.2",
+    "@blockforfun/plugin-build": "^3.0.2",
+    "@blockforfun/plugin-git": "^1.1.3",
     "@oclif/command": "^1.5.6",
     "@oclif/config": "^1.9.0",
     "@oclif/plugin-help": "^2.1.4"
