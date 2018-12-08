@@ -2,7 +2,7 @@ const {createWriteStream} = require('fs')
 const GitCommand = require('@blockforfun/plugin-git/src/git-command')
 const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/repo')
 
-class BuildTextCommand extends GitCommand {
+class exportTextCommand extends GitCommand {
   async list(repo, source, options) {
     const {target} = options
     let count = 0
@@ -22,7 +22,7 @@ class BuildTextCommand extends GitCommand {
   }
 
   async run() {
-    const {args, flags} = this.parse(BuildTextCommand)
+    const {args, flags} = this.parse(exportTextCommand)
     const {source, target} = args
     try {
       const count = await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, {target, ...flags})
@@ -33,8 +33,8 @@ class BuildTextCommand extends GitCommand {
   }
 }
 
-BuildTextCommand.description = 'lists entries in text format from a BlockFor.fun git registry'
-BuildTextCommand.args = [
+exportTextCommand.description = 'exports text entries from a BlockFor.fun git registry'
+exportTextCommand.args = [
   ...GitCommand.args,
   {
     name: 'target',
@@ -42,6 +42,6 @@ BuildTextCommand.args = [
     parse: input => createWriteStream(input),
   },
 ]
-BuildTextCommand.flags = GitCommand.flags
+exportTextCommand.flags = GitCommand.flags
 
-module.exports = BuildTextCommand
+module.exports = exportTextCommand

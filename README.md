@@ -20,7 +20,7 @@ BlockFor.fun CLI
 Bundled plugins
 
 * [`@blockforfun/plugin-git`](plugins/plugin-git)
-* [`@blockforfun/plugin-build`](plugins/plugin-build)
+* [`@blockforfun/plugin-export`](plugins/plugin-export)
 
 # Usage
 
@@ -41,20 +41,20 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`blockfun build:sqlite SOURCE TARGET`](#blockfun-buildsqlite-source-target)
+* [`blockfun export:sqlite SOURCE TARGET`](#blockfun-exportsqlite-source-target)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
 * [`blockfun list:json SOURCE [TARGET]`](#blockfun-listjson-source-target)
 * [`blockfun list:text SOURCE [TARGET]`](#blockfun-listtext-source-target)
 * [`blockfun read:json SOURCE PATH [TARGET]`](#blockfun-readjson-source-path-target)
 * [`blockfun read:text SOURCE PATH [TARGET]`](#blockfun-readtext-source-path-target)
 
-## `blockfun build:sqlite SOURCE TARGET`
+## `blockfun export:sqlite SOURCE TARGET`
 
-builds sqlite3 database from a BlockFor.fun git registry
+exports sqlite3 database from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun build:sqlite SOURCE TARGET
+  $ blockfun export:sqlite SOURCE TARGET
 
 ARGUMENTS
   SOURCE  git source repository URL or path
@@ -66,7 +66,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
 ```
 
-_See code: [@blockforfun/plugin-build](https://github.com/blockforfun/cli/blob/v4.0.0/src\commands\build\sqlite.js)_
+_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v4.0.0/src\commands\export\sqlite.js)_
 
 ## `blockfun help [COMMAND]`
 

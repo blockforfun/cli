@@ -1,6 +1,6 @@
-const BuildTextCommand = require('./text')
+const exportTextCommand = require('./text')
 
-class BuildJsonCommand extends BuildTextCommand {
+class exportJsonCommand extends exportTextCommand {
   async list(repo, source, options) {
     const {target} = options
     let count = 0
@@ -20,8 +20,8 @@ class BuildJsonCommand extends BuildTextCommand {
   }
 }
 
-BuildJsonCommand.description = 'builds json from a BlockFor.fun git registry'
-BuildJsonCommand.args = BuildTextCommand.args
-BuildJsonCommand.flags = BuildTextCommand.flags
+exportJsonCommand.description = 'exports json entries from a BlockFor.fun git registry'
+exportJsonCommand.args = exportTextCommand.args
+exportJsonCommand.flags = exportTextCommand.flags
 
-module.exports = BuildJsonCommand
+module.exports = exportJsonCommand

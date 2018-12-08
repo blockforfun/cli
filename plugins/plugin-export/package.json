@@ -1,6 +1,6 @@
 {
-  "name": "@blockforfun/plugin-build",
-  "description": "BlockFor.fun CLI build plugin",
+  "name": "@blockforfun/plugin-export",
+  "description": "BlockFor.fun CLI export plugin",
   "version": "4.0.0",
   "author": "Mikael Karon <mikael@karon.se>",
   "bugs": "https://github.com/blockforfun/cli/issues",
@@ -23,7 +23,7 @@
     "/src",
     "/yarn.lock"
   ],
-  "homepage": "https://blockfor.fun/cli/plugins/plugin-build",
+  "homepage": "https://blockfor.fun/cli/plugins/plugin-export",
   "keywords": [
     "oclif-plugin"
   ],
@@ -31,8 +31,8 @@
   "oclif": {
     "commands": "./src/commands",
     "topics": {
-      "build": {
-        "description": "builds databases from a BlockFor.fun git registry"
+      "export": {
+        "description": "exports databases from a BlockFor.fun git registry"
       }
     },
     "bin": "oclif-example",

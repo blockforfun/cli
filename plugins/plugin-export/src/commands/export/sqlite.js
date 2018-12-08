@@ -2,8 +2,8 @@ const sqlite = require('sqlite')
 const GitCommand = require('@blockforfun/plugin-git/src/git-command')
 const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/repo')
 
-class BuildSQLiteCommand extends GitCommand {
-  async build(repo, url, path, options) {
+class exportSQLiteCommand extends GitCommand {
+  async export(repo, url, path, options) {
     this.log(`Opening sqlite DB at ${path}`)
     const db = await sqlite.open(path)
     let count = 0
@@ -25,10 +25,10 @@ class BuildSQLiteCommand extends GitCommand {
   }
 
   async run() {
-    const {args, flags} = this.parse(BuildSQLiteCommand)
+    const {args, flags} = this.parse(exportSQLiteCommand)
     const {source, target} = args
     try {
-      let count = await this.build(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
+      let count = await this.export(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
       this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
@@ -36,8 +36,8 @@ class BuildSQLiteCommand extends GitCommand {
   }
 }
 
-BuildSQLiteCommand.description = 'builds sqlite3 database from a BlockFor.fun git registry'
-BuildSQLiteCommand.args = [
+exportSQLiteCommand.description = 'exports sqlite3 database from a BlockFor.fun git registry'
+exportSQLiteCommand.args = [
   ...GitCommand.args,
   {
     name: 'target',
@@ -45,6 +45,6 @@ BuildSQLiteCommand.args = [
     required: true,
   },
 ]
-BuildSQLiteCommand.flags = GitCommand.flags
+exportSQLiteCommand.flags = GitCommand.flags
 
-module.exports = BuildSQLiteCommand
+module.exports = exportSQLiteCommand
