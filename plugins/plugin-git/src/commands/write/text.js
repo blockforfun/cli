@@ -34,12 +34,12 @@ WriteTextCommand.args = [
   ...GitCommand.args,
   {
     name: 'path',
-    description: 'path to git file',
+    description: 'git file path',
     required: true,
   },
   {
     name: 'input',
-    description: 'path to input file',
+    description: 'input file path',
     parse: input => createReadStream(input),
     required: true,
   },

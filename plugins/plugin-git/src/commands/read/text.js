@@ -5,14 +5,14 @@ const {compile} = require('../../entry')
 
 class ReadTextCommand extends GitCommand {
   async read(repo, source, path, options) {
-    const {target} = options
+    const {output} = options
     try {
-      const log = target ? message => target.write(message) : this.log
+      const out = output ? message => output.write(message) : this.log
       await this.mount(repo, source, options)
-      log(compile(await repo.loadEntry(await this.tree(repo, options), path, options), options).body)
+      out(compile(await repo.loadEntry(await this.tree(repo, options), path, options), options).body)
     } finally {
-      if (target) {
-        target.end()
+      if (output) {
+        output.end()
       }
     }
     return 1
@@ -20,10 +20,10 @@ class ReadTextCommand extends GitCommand {
 
   async run() {
     const {args, flags} = this.parse(ReadTextCommand)
-    const {source, path, target} = args
+    const {source, path, output} = args
     try {
-      const count = await this.read(source.protocol ? new MemRepo() : new FsRepo(source.path), source, path, {target, ...flags})
-      this.log(`${target ? 'Wrote' : 'Read'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
+      const count = await this.read(source.protocol ? new MemRepo() : new FsRepo(source.path), source, path, {output, ...flags})
+      this.log(`${output ? 'Wrote' : 'Read'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
     }
@@ -35,12 +35,12 @@ ReadTextCommand.args = [
   ...GitCommand.args,
   {
     name: 'path',
-    description: 'path to git file',
+    description: 'git file path',
     required: true,
   },
   {
-    name: 'target',
-    description: 'path to target text file',
+    name: 'output',
+    description: 'output file path',
     parse: input => createWriteStream(input),
   },
 ]

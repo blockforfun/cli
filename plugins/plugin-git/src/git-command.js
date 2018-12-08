@@ -36,7 +36,7 @@ GitCommand.args = [
 GitCommand.flags = {
   ref: flags.string({
     char: 'r',
-    description: 'git ref to read/write from/to',
+    description: 'git ref',
     default: 'refs/heads/master',
   }),
   spec: flags.string({

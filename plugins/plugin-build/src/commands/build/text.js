@@ -7,10 +7,10 @@ class BuildTextCommand extends GitCommand {
     const {target} = options
     let count = 0
     try {
-      const log = target ? message => target.write(`${message}\n`) : this.log
+      const out = target ? message => target.write(`${message}\n`) : this.log
       await this.mount(repo, source, options)
       for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
-        log(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
+        out(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
         count++
       }
     } finally {
@@ -38,7 +38,7 @@ BuildTextCommand.args = [
   ...GitCommand.args,
   {
     name: 'target',
-    description: 'path to target text file',
+    description: 'path to target file',
     parse: input => createWriteStream(input),
   },
 ]

@@ -2,18 +2,18 @@ const ListTextCommand = require('./text')
 
 class ListJsonCommand extends ListTextCommand {
   async list(repo, source, options) {
-    const {target} = options
+    const {output} = options
     let count = 0
     try {
-      const log = target ? message => target.write(`${message}\n`) : this.log
+      const out = output ? message => output.write(`${message}\n`) : this.log
       await this.mount(repo, source, options)
       for await (const file of repo.listEntries(await this.tree(repo, options), options)) {
-        log(JSON.stringify(file))
+        out(JSON.stringify(file))
         count++
       }
     } finally {
-      if (target) {
-        target.end()
+      if (output) {
+        output.end()
       }
     }
     return count
