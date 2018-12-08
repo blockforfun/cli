@@ -1,11 +1,11 @@
 {
   "name": "@blockforfun/plugin-export",
   "description": "BlockFor.fun CLI export plugin",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "author": "Mikael Karon <mikael@karon.se>",
   "bugs": "https://github.com/blockforfun/cli/issues",
   "dependencies": {
-    "@blockforfun/plugin-git": "^3.0.0",
+    "@blockforfun/plugin-git": "^4.0.0",
     "sqlite": "^3.0.0"
   },
   "devDependencies": {

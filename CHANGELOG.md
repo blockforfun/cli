@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@7.0.0...@blockforfun/cli@8.0.0) (2018-12-08)
+
+
+### Features
+
+* Added write command to git plugin ([0ab0a37](https://github.com/blockforfun/cli/commit/0ab0a37))
+* Rename build plugin to export ([2653c2f](https://github.com/blockforfun/cli/commit/2653c2f))
+
+
+### BREAKING CHANGES
+
+* plugin-build is now plugin-export
+* API changes
+
+
+
+
+
 # [7.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@6.0.0...@blockforfun/cli@7.0.0) (2018-11-27)
 
 

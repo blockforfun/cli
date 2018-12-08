@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@3.0.0...@blockforfun/plugin-git@4.0.0) (2018-12-08)
+
+
+### Features
+
+* Added write command to git plugin ([0ab0a37](https://github.com/blockforfun/cli/commit/0ab0a37))
+
+
+### BREAKING CHANGES
+
+* API changes
+
+
+
+
+
+
 # [3.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@2.0.0...@blockforfun/plugin-git@3.0.0) (2018-11-27)
 
 
