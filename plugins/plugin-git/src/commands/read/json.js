@@ -1,20 +1,12 @@
-const {blobToText} = require('@es-git/object-mixin')
-const {EXT, DELIM} = require('../../consts')
 const ReadTextCommand = require('./text')
 
 class ReadJsonCommand extends ReadTextCommand {
-  async read(repo, url, path, options) {
-    const {target, ext = EXT, delim = DELIM} = options
-    const log = target ? message => target.write(message) : this.log
+  async read(repo, source, path, options) {
+    const {target} = options
     try {
-      const entry = await repo.loadObjectByPath(await this.tree(repo, url, options), path)
-      const [flags, description] = blobToText(entry.body).split('\n')
-      log({
-        number: path.replace(ext, '').split('/').filter(part => part.length !== 0),
-        flags: flags.split(delim).sort(),
-        description,
-        path,
-      })
+      const log = target ? message => target.write(message) : this.log
+      await this.mount(repo, source, options)
+      log(await repo.loadEntry(await this.tree(repo, options), path, options))
     } finally {
       if (target) {
         target.end()

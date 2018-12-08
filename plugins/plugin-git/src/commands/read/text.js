@@ -1,15 +1,15 @@
 const {createWriteStream} = require('fs')
-const {blobToText} = require('@es-git/object-mixin')
 const GitCommand = require('../../git-command')
 const {MemRepo, FsRepo} = require('../../repo')
+const {compile} = require('../../entry')
 
 class ReadTextCommand extends GitCommand {
-  async read(repo, url, path, options) {
+  async read(repo, source, path, options) {
     const {target} = options
-    const log = target ? message => target.write(message) : this.log
     try {
-      const entry = await repo.loadObjectByPath(await this.tree(repo, url, options), path)
-      log(blobToText(entry.body))
+      const log = target ? message => target.write(message) : this.log
+      await this.mount(repo, source, options)
+      log(compile(await repo.loadEntry(await this.tree(repo, options), path, options), options).body)
     } finally {
       if (target) {
         target.end()
