@@ -33,27 +33,29 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`oclif-example list:json SOURCE [TARGET]`](#oclif-example-listjson-source-target)
-* [`oclif-example list:text SOURCE [TARGET]`](#oclif-example-listtext-source-target)
-* [`oclif-example read:json SOURCE PATH [TARGET]`](#oclif-example-readjson-source-path-target)
-* [`oclif-example read:text SOURCE PATH [TARGET]`](#oclif-example-readtext-source-path-target)
+* [`oclif-example list:json SOURCE [OUTPUT]`](#oclif-example-listjson-source-output)
+* [`oclif-example list:text SOURCE [OUTPUT]`](#oclif-example-listtext-source-output)
+* [`oclif-example read:json SOURCE PATH [OUTPUT]`](#oclif-example-readjson-source-path-output)
+* [`oclif-example read:text SOURCE PATH [OUTPUT]`](#oclif-example-readtext-source-path-output)
+* [`oclif-example write:json SOURCE PATH INPUT`](#oclif-example-writejson-source-path-input)
+* [`oclif-example write:text SOURCE PATH INPUT`](#oclif-example-writetext-source-path-input)
 
-## `oclif-example list:json SOURCE [TARGET]`
+## `oclif-example list:json SOURCE [OUTPUT]`
 
 lists entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example list:json SOURCE [TARGET]
+  $ oclif-example list:json SOURCE [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example ls:json
@@ -61,22 +63,22 @@ ALIASES
 
 _See code: [src\commands\list\json.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\list\json.js)_
 
-## `oclif-example list:text SOURCE [TARGET]`
+## `oclif-example list:text SOURCE [OUTPUT]`
 
 lists entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example list:text SOURCE [TARGET]
+  $ oclif-example list:text SOURCE [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example ls
@@ -85,23 +87,23 @@ ALIASES
 
 _See code: [src\commands\list\text.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\list\text.js)_
 
-## `oclif-example read:json SOURCE PATH [TARGET]`
+## `oclif-example read:json SOURCE PATH [OUTPUT]`
 
 reads entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example read:json SOURCE PATH [TARGET]
+  $ oclif-example read:json SOURCE PATH [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  PATH    path to git file
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  PATH    git file path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example get:json
@@ -109,23 +111,23 @@ ALIASES
 
 _See code: [src\commands\read\json.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\read\json.js)_
 
-## `oclif-example read:text SOURCE PATH [TARGET]`
+## `oclif-example read:text SOURCE PATH [OUTPUT]`
 
 reads entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example read:text SOURCE PATH [TARGET]
+  $ oclif-example read:text SOURCE PATH [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  PATH    path to git file
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  PATH    git file path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example get
@@ -133,4 +135,53 @@ ALIASES
 ```
 
 _See code: [src\commands\read\text.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\read\text.js)_
+
+## `oclif-example write:json SOURCE PATH INPUT`
+
+writes json formatted entries to a BlockFor.fun git registry
+
+```
+USAGE
+  $ oclif-example write:json SOURCE PATH INPUT
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  PATH    git file path
+  INPUT   input file path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ oclif-example put:json
+```
+
+_See code: [src\commands\write\json.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\write\json.js)_
+
+## `oclif-example write:text SOURCE PATH INPUT`
+
+writes text formatted entries to a BlockFor.fun git registry
+
+```
+USAGE
+  $ oclif-example write:text SOURCE PATH INPUT
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  PATH    git file path
+  INPUT   input file path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ oclif-example put
+  $ oclif-example put:text
+```
+
+_See code: [src\commands\write\text.js](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\write\text.js)_
 <!-- commandsstop -->

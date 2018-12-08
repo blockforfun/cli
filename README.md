@@ -41,12 +41,36 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`blockfun export:json SOURCE [TARGET]`](#blockfun-exportjson-source-target)
 * [`blockfun export:sqlite SOURCE TARGET`](#blockfun-exportsqlite-source-target)
+* [`blockfun export:text SOURCE [TARGET]`](#blockfun-exporttext-source-target)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
-* [`blockfun list:json SOURCE [TARGET]`](#blockfun-listjson-source-target)
-* [`blockfun list:text SOURCE [TARGET]`](#blockfun-listtext-source-target)
-* [`blockfun read:json SOURCE PATH [TARGET]`](#blockfun-readjson-source-path-target)
-* [`blockfun read:text SOURCE PATH [TARGET]`](#blockfun-readtext-source-path-target)
+* [`blockfun list:json SOURCE [OUTPUT]`](#blockfun-listjson-source-output)
+* [`blockfun list:text SOURCE [OUTPUT]`](#blockfun-listtext-source-output)
+* [`blockfun read:json SOURCE PATH [OUTPUT]`](#blockfun-readjson-source-path-output)
+* [`blockfun read:text SOURCE PATH [OUTPUT]`](#blockfun-readtext-source-path-output)
+* [`blockfun write:json SOURCE PATH INPUT`](#blockfun-writejson-source-path-input)
+* [`blockfun write:text SOURCE PATH INPUT`](#blockfun-writetext-source-path-input)
+
+## `blockfun export:json SOURCE [TARGET]`
+
+exports json entries from a BlockFor.fun git registry
+
+```
+USAGE
+  $ blockfun export:json SOURCE [TARGET]
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  TARGET  path to target file
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+```
+
+_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v4.0.0/src\commands\export\json.js)_
 
 ## `blockfun export:sqlite SOURCE TARGET`
 
@@ -57,16 +81,36 @@ USAGE
   $ blockfun export:sqlite SOURCE TARGET
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
+  SOURCE  git repository URL or path
   TARGET  path to target sqlite3 database
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
 _See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v4.0.0/src\commands\export\sqlite.js)_
+
+## `blockfun export:text SOURCE [TARGET]`
+
+exports text entries from a BlockFor.fun git registry
+
+```
+USAGE
+  $ blockfun export:text SOURCE [TARGET]
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  TARGET  path to target file
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+```
+
+_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v4.0.0/src\commands\export\text.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -85,22 +129,22 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src\commands\help.ts)_
 
-## `blockfun list:json SOURCE [TARGET]`
+## `blockfun list:json SOURCE [OUTPUT]`
 
 lists entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun list:json SOURCE [TARGET]
+  $ blockfun list:json SOURCE [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ blockfun ls:json
@@ -108,22 +152,22 @@ ALIASES
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\list\json.js)_
 
-## `blockfun list:text SOURCE [TARGET]`
+## `blockfun list:text SOURCE [OUTPUT]`
 
 lists entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun list:text SOURCE [TARGET]
+  $ blockfun list:text SOURCE [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ blockfun ls
@@ -132,23 +176,23 @@ ALIASES
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\list\text.js)_
 
-## `blockfun read:json SOURCE PATH [TARGET]`
+## `blockfun read:json SOURCE PATH [OUTPUT]`
 
 reads entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun read:json SOURCE PATH [TARGET]
+  $ blockfun read:json SOURCE PATH [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  PATH    path to git file
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  PATH    git file path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ blockfun get:json
@@ -156,23 +200,23 @@ ALIASES
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\read\json.js)_
 
-## `blockfun read:text SOURCE PATH [TARGET]`
+## `blockfun read:text SOURCE PATH [OUTPUT]`
 
 reads entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun read:text SOURCE PATH [TARGET]
+  $ blockfun read:text SOURCE PATH [OUTPUT]
 
 ARGUMENTS
-  SOURCE  git source repository URL or path
-  PATH    path to git file
-  TARGET  path to target text file
+  SOURCE  git repository URL or path
+  PATH    git file path
+  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch repository URL
-  -r, --ref=ref      [default: refs/heads/master] git ref to read from
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git refspec to fetch
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ blockfun get
@@ -180,4 +224,53 @@ ALIASES
 ```
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\read\text.js)_
+
+## `blockfun write:json SOURCE PATH INPUT`
+
+writes json formatted entries to a BlockFor.fun git registry
+
+```
+USAGE
+  $ blockfun write:json SOURCE PATH INPUT
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  PATH    git file path
+  INPUT   input file path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ blockfun put:json
+```
+
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\write\json.js)_
+
+## `blockfun write:text SOURCE PATH INPUT`
+
+writes text formatted entries to a BlockFor.fun git registry
+
+```
+USAGE
+  $ blockfun write:text SOURCE PATH INPUT
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  PATH    git file path
+  INPUT   input file path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ blockfun put
+  $ blockfun put:text
+```
+
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v3.0.0/src\commands\write\text.js)_
 <!-- commandsstop -->
