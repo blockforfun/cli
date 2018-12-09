@@ -2,7 +2,7 @@ const sqlite = require('sqlite')
 const GitCommand = require('@blockforfun/plugin-git/src/git-command')
 
 class ExportSQLiteCommand extends GitCommand {
-  async export(path, options) {
+  async export(ref, path, options) {
     this.log(`Opening sqlite DB at ${path}`)
     const db = await sqlite.open(path)
     let count = 0
@@ -11,7 +11,7 @@ class ExportSQLiteCommand extends GitCommand {
       await db.run('DROP TABLE IF EXISTS entries')
       this.log('Creating new entries')
       await db.run('CREATE TABLE entries (number VARCHAR, flags VARCHAR, description VARCHAR)')
-      for await (const entry of this.repo.loadEntries(await this.tree(options), options)) {
+      for await (const entry of this.repo.loadEntries(ref, options)) {
         await db.run('INSERT INTO entries VALUES (?, ?, ?)', entry.number.join(''), entry.flags.join(','), entry.description)
         count++
       }
@@ -23,8 +23,8 @@ class ExportSQLiteCommand extends GitCommand {
   }
 
   async run() {
-    const {args: {output}, flags: options} = this
-    let count = await this.export(output, options)
+    const {args: {output}, flags: {ref}, flags} = this
+    let count = await this.export(ref, output, flags)
     this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }

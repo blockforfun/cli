@@ -1,9 +1,9 @@
 const GitOutCommand = require('../../git-out-command')
 
 class ListTextCommand extends GitOutCommand {
-  async list(options) {
+  async list(ref, options) {
     let count = 0
-    for await (const file of this.repo.listEntries(await this.tree(options), options)) {
+    for await (const file of this.repo.listEntries(ref, options)) {
       this.out(`${file.hash} ${file.path.join('/')}`)
       count++
     }
@@ -17,8 +17,8 @@ class ListTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {output}, flags: options} = this
-    const count = await this.list(options)
+    const {args: {output}, flags: {ref}, flags} = this
+    const count = await this.list(ref, flags)
     this.log(`${output ? 'Wrote' : 'Listed'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }

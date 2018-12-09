@@ -1,9 +1,9 @@
 const ListTextCommand = require('./text')
 
 class ListJsonCommand extends ListTextCommand {
-  async list(options) {
+  async list(ref, options) {
     let count = 0
-    for await (const file of this.repo.listEntries(await this.tree(options), options)) {
+    for await (const file of this.repo.listEntries(ref, options)) {
       this.out(JSON.stringify(file))
       count++
     }

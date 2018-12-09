@@ -2,8 +2,8 @@ const GitOutCommand = require('../../git-out-command')
 const {compile} = require('../../entry')
 
 class ReadTextCommand extends GitOutCommand {
-  async read(path, options) {
-    this.out(compile(await this.repo.loadEntry(await this.tree(options), path, options), options).body)
+  async read(ref, path, options) {
+    this.out(compile(await this.repo.loadEntry(ref, path, options), options).body)
     return 1
   }
 
@@ -14,8 +14,8 @@ class ReadTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {path, output}, flags: options} = this
-    const count = await this.read(path, options)
+    const {args: {path, output}, flags, flags: {ref}} = this
+    const count = await this.read(ref, path, flags)
     this.log(`${output ? 'Wrote' : 'Read'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }

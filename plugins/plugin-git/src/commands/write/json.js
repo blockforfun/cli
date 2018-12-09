@@ -2,8 +2,7 @@ const WriteTextCommand = require('./text')
 const {parse} = require('../../entry')
 
 class WriteJsonCommand extends WriteTextCommand {
-  async write(path, body, options) {
-    const {ref} = options
+  async write(ref, path, body, options) {
     const entry = {...JSON.parse(body), ...parse(path, null, options)}
     this.log(JSON.stringify({
       path: path.split('/'),

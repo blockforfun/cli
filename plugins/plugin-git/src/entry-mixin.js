@@ -42,25 +42,35 @@ const recursivelyDeleteFile = (parent, path) => {
   return parent
 }
 
+async function tree(ref) {
+  const hash = await this.getRef(ref)
+  if (!hash) {
+    throw new Error(`Can't find ${ref}`)
+  }
+  const commit = await this.loadCommit(hash)
+  return commit.tree
+}
+
 module.exports = repo => {
   return class EntryRepo extends repo {
-    async * listEntries(tree, options = {glob: GLOB}) {
+    async * listEntries(ref, options = {glob: GLOB}) {
       const {glob = GLOB} = options
-      for await (const file of super.listFiles(tree)) {
+      for await (const file of super.listFiles(await tree.call(this, ref))) {
         if (isMatch(file.path.join('/'), glob)) {
           yield file
         }
       }
     }
 
-    async * loadEntries(tree, options) {
-      for await (const file of this.listEntries(tree, options)) {
+    async * loadEntries(ref, options) {
+      for await (const file of this.listEntries(ref, options)) {
         yield parse(file.path.join('/'), await super.loadText(file.hash), options)
       }
     }
 
-    async loadEntry(tree, path, options) {
-      const file = await super.loadObjectByPath(tree, path)
+    async loadEntry(ref, path, options) {
+      const self = this
+      const file = await super.loadObjectByPath(await tree.call(self, ref), path)
       return parse(path, blobToText(file.body), options)
     }
 
@@ -68,7 +78,7 @@ module.exports = repo => {
       const {message = MESSAGE, person = PERSON} = options
       const {path, body} = compile(entry)
       const parts = path.split('/')
-      const tree = await super.checkout(ref)
+      const hash = await super.checkout(ref)
       const commiter = {
         date: new Date(),
         ...PERSON,
@@ -76,10 +86,10 @@ module.exports = repo => {
       }
       // !entry - delete
       if (!entry.body) {
-        return super.commit(ref, recursivelyDeleteFile(tree, parts), message, commiter)
+        return super.commit(ref, recursivelyDeleteFile(hash, parts), message, commiter)
       }
       // !!entry - save
-      return super.commit(ref, recursivelyMakeFile(tree, parts, await super.saveText(body), body), message, commiter)
+      return super.commit(ref, recursivelyMakeFile(hash, parts, await super.saveText(body), body), message, commiter)
     }
   }
 }
