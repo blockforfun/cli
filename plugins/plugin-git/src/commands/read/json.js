@@ -3,15 +3,9 @@ const ReadTextCommand = require('./text')
 class ReadJsonCommand extends ReadTextCommand {
   async read(repo, source, path, options) {
     const {output} = options
-    try {
-      const out = output ? message => output.write(message) : this.log
-      await this.mount(repo, source, options)
-      out(JSON.stringify(await repo.loadEntry(await this.tree(repo, options), path, options)))
-    } finally {
-      if (output) {
-        output.end()
-      }
-    }
+    const out = output ? message => output.write(message) : this.log
+    await this.mount(repo, source, options)
+    out(JSON.stringify(await repo.loadEntry(await this.tree(repo, options), path, options)))
     return 1
   }
 }

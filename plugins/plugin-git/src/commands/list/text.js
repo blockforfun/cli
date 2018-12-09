@@ -6,17 +6,11 @@ class ListTextCommand extends GitCommand {
   async list(repo, source, options) {
     const {output} = options
     let count = 0
-    try {
-      const out = output ? message => output.write(`${message}\n`) : this.log
-      await this.mount(repo, source, options)
-      for await (const file of repo.listEntries(await this.tree(repo, options), options)) {
-        out(`${file.hash} ${file.path.join('/')}`)
-        count++
-      }
-    } finally {
-      if (output) {
-        output.end()
-      }
+    const out = output ? message => output.write(`${message}\n`) : this.log
+    await this.mount(repo, source, options)
+    for await (const file of repo.listEntries(await this.tree(repo, options), options)) {
+      out(`${file.hash} ${file.path.join('/')}`)
+      count++
     }
     return count
   }
@@ -29,6 +23,10 @@ class ListTextCommand extends GitCommand {
       this.log(`${output ? 'Wrote' : 'Listed'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
+    } finally {
+      if (output) {
+        output.end()
+      }
     }
   }
 }

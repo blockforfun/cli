@@ -5,18 +5,12 @@ const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/repo')
 class exportTextCommand extends GitCommand {
   async list(repo, source, options) {
     const {target} = options
+    const out = target ? message => target.write(`${message}\n`) : this.log
     let count = 0
-    try {
-      const out = target ? message => target.write(`${message}\n`) : this.log
-      await this.mount(repo, source, options)
-      for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
-        out(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
-        count++
-      }
-    } finally {
-      if (target) {
-        target.end()
-      }
+    await this.mount(repo, source, options)
+    for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
+      out(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
+      count++
     }
     return count
   }
@@ -29,6 +23,10 @@ class exportTextCommand extends GitCommand {
       this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
+    } finally {
+      if (target) {
+        target.end()
+      }
     }
   }
 }

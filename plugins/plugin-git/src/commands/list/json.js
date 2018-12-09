@@ -4,17 +4,11 @@ class ListJsonCommand extends ListTextCommand {
   async list(repo, source, options) {
     const {output} = options
     let count = 0
-    try {
-      const out = output ? message => output.write(`${message}\n`) : this.log
-      await this.mount(repo, source, options)
-      for await (const file of repo.listEntries(await this.tree(repo, options), options)) {
-        out(JSON.stringify(file))
-        count++
-      }
-    } finally {
-      if (output) {
-        output.end()
-      }
+    const out = output ? message => output.write(`${message}\n`) : this.log
+    await this.mount(repo, source, options)
+    for await (const file of repo.listEntries(await this.tree(repo, options), options)) {
+      out(JSON.stringify(file))
+      count++
     }
     return count
   }

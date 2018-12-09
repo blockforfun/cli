@@ -7,13 +7,9 @@ const {parse} = require('../../entry')
 class WriteTextCommand extends GitCommand {
   async write(repo, source, path, options) {
     const {ref, input} = options
-    try {
-      await this.mount(repo, source, options)
-      const hash = await repo.saveEntry(ref, parse(path, await toString(input), options))
-      this.log(`${hash} ${path}`)
-    } finally {
-      input.destroy()
-    }
+    await this.mount(repo, source, options)
+    const hash = await repo.saveEntry(ref, parse(path, await toString(input), options))
+    this.log(`${hash} ${path}`)
     return 1
   }
 
@@ -25,6 +21,8 @@ class WriteTextCommand extends GitCommand {
       this.log(`Wrote ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
+    } finally {
+      input.destroy()
     }
   }
 }

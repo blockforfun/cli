@@ -3,18 +3,12 @@ const exportTextCommand = require('./text')
 class exportJsonCommand extends exportTextCommand {
   async list(repo, source, options) {
     const {target} = options
+    const out = target ? message => target.write(`${message}\n`) : this.log
     let count = 0
-    try {
-      const out = target ? message => target.write(`${message}\n`) : this.log
-      await this.mount(repo, source, options)
-      for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
-        out(JSON.stringify(entry))
-        count++
-      }
-    } finally {
-      if (target) {
-        target.end()
-      }
+    await this.mount(repo, source, options)
+    for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
+      out(JSON.stringify(entry))
+      count++
     }
     return count
   }

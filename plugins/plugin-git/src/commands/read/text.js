@@ -6,15 +6,9 @@ const {compile} = require('../../entry')
 class ReadTextCommand extends GitCommand {
   async read(repo, source, path, options) {
     const {output} = options
-    try {
-      const out = output ? message => output.write(message) : this.log
-      await this.mount(repo, source, options)
-      out(compile(await repo.loadEntry(await this.tree(repo, options), path, options), options).body)
-    } finally {
-      if (output) {
-        output.end()
-      }
-    }
+    const out = output ? message => output.write(message) : this.log
+    await this.mount(repo, source, options)
+    out(compile(await repo.loadEntry(await this.tree(repo, options), path, options), options).body)
     return 1
   }
 
@@ -26,6 +20,10 @@ class ReadTextCommand extends GitCommand {
       this.log(`${output ? 'Wrote' : 'Read'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
     } catch (error) {
       this.error(error.message, {exit: 1})
+    } finally {
+      if (output) {
+        output.end()
+      }
     }
   }
 }
