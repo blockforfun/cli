@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.0.0...@blockforfun/cli@8.1.0) (2018-12-09)
+
+
+### Bug Fixes
+
+* compile should check before serializing ([141c6b7](https://github.com/blockforfun/cli/commit/141c6b7))
+
+
+### Features
+
+* Added delete command(s) ([48940b8](https://github.com/blockforfun/cli/commit/48940b8))
+
+
+
+
+
 # [8.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@7.0.0...@blockforfun/cli@8.0.0) (2018-12-08)
 
 
