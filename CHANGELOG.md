@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.5](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.2.4...@blockforfun/cli@8.2.5) (2018-12-09)
+
+
+### Bug Fixes
+
+* Default arfs so finnaly can run before init ([fdf7537](https://github.com/blockforfun/cli/commit/fdf7537))
+* Don't steal common aliases ([101205f](https://github.com/blockforfun/cli/commit/101205f))
+
+
+
+
+
 ## [8.2.4](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.2.3...@blockforfun/cli@8.2.4) (2018-12-09)
 
 **Note:** Version bump only for package @blockforfun/cli

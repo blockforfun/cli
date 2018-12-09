@@ -22,7 +22,7 @@ $ npm install -g @blockforfun/plugin-export
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-export/5.0.6 win32-x64 node-v10.10.0
+@blockforfun/plugin-export/5.0.7 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -61,7 +61,7 @@ ALIASES
   $ oclif-example del:text
 ```
 
-_See code: [src\commands\export\json.js](https://github.com/blockforfun/cli/blob/v5.0.6/src\commands\export\json.js)_
+_See code: [src\commands\export\json.js](https://github.com/blockforfun/cli/blob/v5.0.7/src\commands\export\json.js)_
 
 ## `oclif-example export:sqlite SOURCE OUTPUT`
 
@@ -81,7 +81,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [src\commands\export\sqlite.js](https://github.com/blockforfun/cli/blob/v5.0.6/src\commands\export\sqlite.js)_
+_See code: [src\commands\export\sqlite.js](https://github.com/blockforfun/cli/blob/v5.0.7/src\commands\export\sqlite.js)_
 
 ## `oclif-example export:text SOURCE [OUTPUT]`
 
@@ -107,5 +107,5 @@ ALIASES
   $ oclif-example del:text
 ```
 
-_See code: [src\commands\export\text.js](https://github.com/blockforfun/cli/blob/v5.0.6/src\commands\export\text.js)_
+_See code: [src\commands\export\text.js](https://github.com/blockforfun/cli/blob/v5.0.7/src\commands\export\text.js)_
 <!-- commandsstop -->
