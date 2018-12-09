@@ -15,9 +15,9 @@ class DeleteTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {path}, flags: {ref}, flags} = this
+    const {args: {path, output}, flags: {ref}, flags} = this
     const count = await this.delete(ref, path, flags)
-    this.log(`Deleted ${count} ${count === 1 ? 'entry' : 'entries'}`)
+    this.log(`${output ? 'Wrote' : 'Deleted'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
 

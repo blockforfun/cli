@@ -17,9 +17,9 @@ class ExportTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {flags: {ref}, flags} = this
+    const {args: {output}, flags: {ref}, flags} = this
     const count = await this.list(ref, flags)
-    this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
+    this.log(`${output ? 'Wrote' : 'Exported'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
 

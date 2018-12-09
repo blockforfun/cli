@@ -25,7 +25,7 @@ class ExportSQLiteCommand extends GitCommand {
   async run() {
     const {args: {output}, flags: {ref}, flags} = this
     let count = await this.export(ref, output, flags)
-    this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
+    this.log(`Exported ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
 
