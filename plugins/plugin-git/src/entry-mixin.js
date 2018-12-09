@@ -4,20 +4,40 @@ const {parse, compile} = require('./entry')
 const {Mode} = require('@es-git/core')
 const {blobToText} = require('@es-git/object-mixin')
 
-const recursivelyMakeFile = (parent, path, mode, hash, body) => {
+const recursivelyMakeFile = (parent, path, hash, body) => {
   const [name, ...subPath] = path
   const {folders} = parent
   if (subPath.length === 0) {
     parent.files[name] = {
       hash,
-      mode,
+      mode: Mode.file,
       body,
       get text() {
         return body
       },
     }
   } else {
-    recursivelyMakeFile(folders[name] || (folders[name] = {files: {}, folders: {}}), subPath, mode, hash, body)
+    const folder = folders[name] || (folders[name] = {files: {}, folders: {}})
+    return recursivelyMakeFile(folder, subPath, hash, body)
+  }
+  return parent
+}
+
+const recursivelyDeleteFile = (parent, path) => {
+  const [name, ...subPath] = path
+  const {folders} = parent
+  if (subPath.length === 0) {
+    if (!parent.files[name]) {
+      // no file
+      return
+    }
+    delete parent.files[name]
+  } else if (folders[name]) {
+    // child folder
+    return recursivelyDeleteFile(folders[name], subPath)
+  } else {
+    // no folder
+    return
   }
   return parent
 }
@@ -47,11 +67,19 @@ module.exports = repo => {
     async saveEntry(ref, entry, options = {message: MESSAGE, person: PERSON}) {
       const {message = MESSAGE, person = PERSON} = options
       const {path, body} = compile(entry)
-      return super.commit(ref, recursivelyMakeFile(await super.checkout(ref), path.split('/'), Mode.file, await super.saveText(body), body), message, {
+      const parts = path.split('/')
+      const tree = await super.checkout(ref)
+      const commiter = {
         date: new Date(),
         ...PERSON,
         ...person,
-      })
+      }
+      // !entry - delete
+      if (!entry.body) {
+        return super.commit(ref, recursivelyDeleteFile(tree, parts), message, commiter)
+      }
+      // !!entry - save
+      return super.commit(ref, recursivelyMakeFile(tree, parts, await super.saveText(body), body), message, commiter)
     }
   }
 }
