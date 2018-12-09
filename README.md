@@ -98,8 +98,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ blockfun rm
-  $ blockfun del
   $ blockfun rm:text
   $ blockfun del:text
 ```
@@ -236,7 +234,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ blockfun ls
   $ blockfun ls:text
 ```
 
@@ -285,7 +282,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ blockfun get
   $ blockfun get:text
 ```
 
@@ -334,7 +330,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ blockfun put
   $ blockfun put:text
 ```
 

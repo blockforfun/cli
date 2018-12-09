@@ -86,8 +86,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ oclif-example rm
-  $ oclif-example del
   $ oclif-example rm:text
   $ oclif-example del:text
 ```
@@ -135,7 +133,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ oclif-example ls
   $ oclif-example ls:text
 ```
 
@@ -184,7 +181,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ oclif-example get
   $ oclif-example get:text
 ```
 
@@ -233,7 +229,6 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
-  $ oclif-example put
   $ oclif-example put:text
 ```
 
