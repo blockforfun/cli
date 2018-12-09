@@ -30,7 +30,7 @@ $ npm install -g @blockforfun/cli
 $ blockfun COMMAND
 running command...
 $ blockfun (-v|--version|version)
-@blockforfun/cli/8.1.0 win32-x64 node-v10.10.0
+@blockforfun/cli/8.2.0 win32-x64 node-v10.10.0
 $ blockfun --help [COMMAND]
 USAGE
   $ blockfun COMMAND
@@ -77,7 +77,7 @@ ALIASES
   $ blockfun del:json
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\delete\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\delete\json.js)_
 
 ## `blockfun delete:text SOURCE PATH [OUTPUT]`
 
@@ -104,7 +104,7 @@ ALIASES
   $ blockfun del:text
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\delete\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\delete\text.js)_
 
 ## `blockfun export:json SOURCE [TARGET]`
 
@@ -124,7 +124,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.1/src\commands\export\json.js)_
+_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\json.js)_
 
 ## `blockfun export:sqlite SOURCE TARGET`
 
@@ -144,7 +144,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.1/src\commands\export\sqlite.js)_
+_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\sqlite.js)_
 
 ## `blockfun export:text SOURCE [TARGET]`
 
@@ -164,7 +164,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.1/src\commands\export\text.js)_
+_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\text.js)_
 
 ## `blockfun help [COMMAND]`
 
@@ -204,7 +204,7 @@ ALIASES
   $ blockfun ls:json
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\list\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\list\json.js)_
 
 ## `blockfun list:text SOURCE [OUTPUT]`
 
@@ -228,7 +228,7 @@ ALIASES
   $ blockfun ls:text
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\list\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\list\text.js)_
 
 ## `blockfun read:json SOURCE PATH [OUTPUT]`
 
@@ -252,7 +252,7 @@ ALIASES
   $ blockfun get:json
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\read\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\read\json.js)_
 
 ## `blockfun read:text SOURCE PATH [OUTPUT]`
 
@@ -277,7 +277,7 @@ ALIASES
   $ blockfun get:text
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\read\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\read\text.js)_
 
 ## `blockfun write:json SOURCE PATH INPUT`
 
@@ -301,7 +301,7 @@ ALIASES
   $ blockfun put:json
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\write\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\write\json.js)_
 
 ## `blockfun write:text SOURCE PATH INPUT`
 
@@ -326,5 +326,5 @@ ALIASES
   $ blockfun put:text
 ```
 
-_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\write\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\write\text.js)_
 <!-- commandsstop -->

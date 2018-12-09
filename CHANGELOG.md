@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.2.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.1.0...@blockforfun/cli@8.2.0) (2018-12-09)
+
+
+### Bug Fixes
+
+* Don't forget to stringify before out ([5c9334a](https://github.com/blockforfun/cli/commit/5c9334a))
+
+
+### Features
+
+* Add output support to delete ([07816bd](https://github.com/blockforfun/cli/commit/07816bd))
+
+
+
+
+
 # [8.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.0.0...@blockforfun/cli@8.1.0) (2018-12-09)
 
 
