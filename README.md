@@ -120,12 +120,6 @@ OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
-
-ALIASES
-  $ blockfun rm
-  $ blockfun del
-  $ blockfun rm:text
-  $ blockfun del:text
 ```
 
 _See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.7/src\commands\export\json.js)_
@@ -166,12 +160,6 @@ OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
-
-ALIASES
-  $ blockfun rm
-  $ blockfun del
-  $ blockfun rm:text
-  $ blockfun del:text
 ```
 
 _See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.7/src\commands\export\text.js)_

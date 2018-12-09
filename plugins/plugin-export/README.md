@@ -53,12 +53,6 @@ OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
-
-ALIASES
-  $ oclif-example rm
-  $ oclif-example del
-  $ oclif-example rm:text
-  $ oclif-example del:text
 ```
 
 _See code: [src\commands\export\json.js](https://github.com/blockforfun/cli/blob/v5.0.7/src\commands\export\json.js)_
@@ -99,12 +93,6 @@ OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
-
-ALIASES
-  $ oclif-example rm
-  $ oclif-example del
-  $ oclif-example rm:text
-  $ oclif-example del:text
 ```
 
 _See code: [src\commands\export\text.js](https://github.com/blockforfun/cli/blob/v5.0.7/src\commands\export\text.js)_
