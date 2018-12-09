@@ -11,7 +11,7 @@ class WriteTextCommand extends GitCommand {
   }
 
   async finally(err) {
-    const {args: {input}} = this
+    const {args: {input} = {}} = this
     if (input) {
       input.destroy()
     }
