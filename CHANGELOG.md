@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.1](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.2.0...@blockforfun/cli@8.2.1) (2018-12-09)
+
+**Note:** Version bump only for package @blockforfun/cli
+
+
+
+
+
 # [8.2.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.1.0...@blockforfun/cli@8.2.0) (2018-12-09)
 
 
