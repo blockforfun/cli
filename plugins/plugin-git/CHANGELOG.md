@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.2.3](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@4.2.2...@blockforfun/plugin-git@4.2.3) (2018-12-09)
+
+
+### Bug Fixes
+
+* Default args = {} so finally can safely run before init ([e6ef33c](https://github.com/blockforfun/cli/commit/e6ef33c))
+
+
+
+
+
 ## [4.2.2](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@4.2.1...@blockforfun/plugin-git@4.2.2) (2018-12-09)
 
 

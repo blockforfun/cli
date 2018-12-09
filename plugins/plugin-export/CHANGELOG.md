@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.5](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-export@5.0.4...@blockforfun/plugin-export@5.0.5) (2018-12-09)
+
+**Note:** Version bump only for package @blockforfun/plugin-export
+
+
+
+
+
 ## [5.0.4](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-export@5.0.3...@blockforfun/plugin-export@5.0.4) (2018-12-09)
 
 

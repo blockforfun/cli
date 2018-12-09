@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [8.2.3](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.2.2...@blockforfun/cli@8.2.3) (2018-12-09)
+
+
+### Bug Fixes
+
+* Default args = {} so finally can safely run before init ([e6ef33c](https://github.com/blockforfun/cli/commit/e6ef33c))
+
+
+
+
+
 ## [8.2.2](https://github.com/blockforfun/cli/compare/@blockforfun/cli@8.2.1...@blockforfun/cli@8.2.2) (2018-12-09)
 
 
