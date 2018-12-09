@@ -3,7 +3,7 @@ const {parse} = require('../../entry')
 
 class DeleteJsonCommand extends DeleteTextCommand {
   async delete(ref, path, options) {
-    this.out(JSON.stringify({
+    this.out.write(JSON.stringify({
       path: path.split('/'),
       commit: await this.repo.saveEntry(ref, parse(path, null, options), options),
     }))

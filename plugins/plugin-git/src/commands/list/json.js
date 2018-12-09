@@ -4,7 +4,7 @@ class ListJsonCommand extends ListTextCommand {
   async list(ref, options) {
     let count = 0
     for await (const file of this.repo.listEntries(ref, options)) {
-      this.out(JSON.stringify(file))
+      this.out.write(JSON.stringify(file))
       count++
     }
     return count

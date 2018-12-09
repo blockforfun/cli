@@ -1,12 +1,13 @@
 const {createReadStream} = require('fs')
 const toString = require('stream-to-string')
 const GitCommand = require('../../git-command')
+const GitOutCommand = require('../../git-out-command')
 const {parse} = require('../../entry')
 
-class WriteTextCommand extends GitCommand {
+class WriteTextCommand extends GitOutCommand {
   async write(ref, path, body, options) {
     const hash = await this.repo.saveEntry(ref, parse(path, body, options))
-    this.log(`${hash} ${path}`)
+    this.out.write(`${hash} ${path}`)
     return 1
   }
 

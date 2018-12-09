@@ -4,16 +4,10 @@ class ExportTextCommand extends GitOutCommand {
   async list(ref, options) {
     let count = 0
     for await (const entry of this.repo.loadEntries(ref, options)) {
-      this.out(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
+      this.out.write(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
       count++
     }
     return count
-  }
-
-  async init() {
-    await super.init()
-    const {args: {output}} = this
-    this.out = output ? message => output.write(message) : this.log
   }
 
   async run() {

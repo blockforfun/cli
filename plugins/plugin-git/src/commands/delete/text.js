@@ -4,14 +4,8 @@ const {parse} = require('../../entry')
 class DeleteTextCommand extends GitOutCommand {
   async delete(ref, path, options) {
     const hash = await this.repo.saveEntry(ref, parse(path, null, options), options)
-    this.out(`${hash} ${path}`)
+    this.out.write(`${hash} ${path}`)
     return 1
-  }
-
-  async init() {
-    await super.init()
-    const {args: {output}} = this
-    this.out = output ? message => output.write(`${message}\n`) : this.log
   }
 
   async run() {

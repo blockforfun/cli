@@ -2,7 +2,7 @@ const ReadTextCommand = require('./text')
 
 class ReadJsonCommand extends ReadTextCommand {
   async read(ref, path, options) {
-    this.out(JSON.stringify(await this.repo.loadEntry(ref, path, options)))
+    this.out.write(JSON.stringify(await this.repo.loadEntry(ref, path, options)))
     return 1
   }
 }

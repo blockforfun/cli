@@ -4,7 +4,7 @@ class ExportJsonCommand extends ExportTextCommand {
   async list(ref, options) {
     let count = 0
     for await (const entry of this.repo.loadEntries(ref, options)) {
-      this.out(JSON.stringify(entry))
+      this.out.write(JSON.stringify(entry))
       count++
     }
     return count

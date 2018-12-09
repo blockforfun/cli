@@ -4,7 +4,7 @@ const {parse} = require('../../entry')
 class WriteJsonCommand extends WriteTextCommand {
   async write(ref, path, body, options) {
     const entry = {...JSON.parse(body), ...parse(path, null, options)}
-    this.log(JSON.stringify({
+    this.out.write(JSON.stringify({
       path: path.split('/'),
       commit: await this.repo.saveEntry(ref, entry),
       entry,

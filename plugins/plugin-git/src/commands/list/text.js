@@ -4,16 +4,10 @@ class ListTextCommand extends GitOutCommand {
   async list(ref, options) {
     let count = 0
     for await (const file of this.repo.listEntries(ref, options)) {
-      this.out(`${file.hash} ${file.path.join('/')}`)
+      this.out.write(`${file.hash} ${file.path.join('/')}`)
       count++
     }
     return count
-  }
-
-  async init() {
-    await super.init()
-    const {args: {output}} = this
-    this.out = output ? message => output.write(`${message}\n`) : this.log
   }
 
   async run() {

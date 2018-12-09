@@ -3,14 +3,9 @@ const {compile} = require('../../entry')
 
 class ReadTextCommand extends GitOutCommand {
   async read(ref, path, options) {
-    this.out(compile(await this.repo.loadEntry(ref, path, options), options).body)
+    const {body} = compile(await this.repo.loadEntry(ref, path, options), options)
+    this.out.write(body)
     return 1
-  }
-
-  async init() {
-    await super.init()
-    const {args: {output}} = this
-    this.out = output ? message => output.write(message) : this.log
   }
 
   async run() {

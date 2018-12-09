@@ -1,7 +1,22 @@
 const {createWriteStream} = require('fs')
+const {Transform} = require('stream')
 const GitCommand = require('./git-command')
 
 class GitOutCommand extends GitCommand {
+  async init() {
+    await super.init()
+    const {args: {output = process.stdout}} = this
+    const out = new Transform({
+      transform(chunk, encoding, done) {
+        done(null, `${chunk}\n`)
+      },
+    })
+
+    out.pipe(output)
+
+    this.out = out
+  }
+
   async finally(err) {
     const {args: {output} = {}} = this
     if (output) {
