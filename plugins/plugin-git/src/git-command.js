@@ -7,24 +7,21 @@ class GitCommand extends Command {
     await super.init()
     const {args, flags} = this.parse(this.constructor)
     const {source} = args
+    const {fetch = source.href, spec} = flags
+    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
+    this.log(`Mounting ${source.protocol ? 'mem' : 'fs'} repo from ${source.href}`)
+    if (source.protocol || flags.fetch) {
+      this.log(`Fetching ${spec} from ${fetch}`)
+      await repo.fetch(fetch, spec, {progress: p => process.stdout.write(p)})
+    }
     this.args = args
     this.flags = flags
-    this.repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
-    await this.mount(source, flags)
+    this.repo = repo
   }
 
   async catch(err) {
     this.error(err.message, {exit: 1})
     return super.catch(err)
-  }
-
-  async mount(url, options) {
-    const {fetch = url.href, spec} = options
-    this.log(`Mounting ${url.protocol ? 'mem' : 'fs'} repo from ${url.href}`)
-    if (url.protocol || options.fetch) {
-      this.log(`Fetching ${spec} from ${fetch}`)
-      await this.repo.fetch(fetch, spec, {progress: p => process.stdout.write(p)})
-    }
   }
 
   async tree(options) {
