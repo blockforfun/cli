@@ -41,6 +41,8 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`blockfun delete:json SOURCE PATH`](#blockfun-deletejson-source-path)
+* [`blockfun delete:text SOURCE PATH`](#blockfun-deletetext-source-path)
 * [`blockfun export:json SOURCE [TARGET]`](#blockfun-exportjson-source-target)
 * [`blockfun export:sqlite SOURCE TARGET`](#blockfun-exportsqlite-source-target)
 * [`blockfun export:text SOURCE [TARGET]`](#blockfun-exporttext-source-target)
@@ -51,6 +53,56 @@ USAGE
 * [`blockfun read:text SOURCE PATH [OUTPUT]`](#blockfun-readtext-source-path-output)
 * [`blockfun write:json SOURCE PATH INPUT`](#blockfun-writejson-source-path-input)
 * [`blockfun write:text SOURCE PATH INPUT`](#blockfun-writetext-source-path-input)
+
+## `blockfun delete:json SOURCE PATH`
+
+deletes entries in json format from a BlockFor.fun git registry
+
+```
+USAGE
+  $ blockfun delete:json SOURCE PATH
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  PATH    git file path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ blockfun rm:json
+  $ blockfun del:json
+```
+
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.0.0/src\commands\delete\json.js)_
+
+## `blockfun delete:text SOURCE PATH`
+
+deletes entries in text format from a BlockFor.fun git registry
+
+```
+USAGE
+  $ blockfun delete:text SOURCE PATH
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+  PATH    git file path
+
+OPTIONS
+  -f, --fetch=fetch  git fetch URL
+  -r, --ref=ref      [default: refs/heads/master] git ref
+  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ blockfun rm
+  $ blockfun del
+  $ blockfun rm:text
+  $ blockfun del:text
+```
+
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.0.0/src\commands\delete\text.js)_
 
 ## `blockfun export:json SOURCE [TARGET]`
 
@@ -227,7 +279,7 @@ _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.
 
 ## `blockfun write:json SOURCE PATH INPUT`
 
-writes json formatted entries to a BlockFor.fun git registry
+writes entries in json format to a BlockFor.fun git registry
 
 ```
 USAGE
@@ -251,7 +303,7 @@ _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.
 
 ## `blockfun write:text SOURCE PATH INPUT`
 
-writes text formatted entries to a BlockFor.fun git registry
+writes entries in text format to a BlockFor.fun git registry
 
 ```
 USAGE
