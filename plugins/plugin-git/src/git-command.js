@@ -5,12 +5,10 @@ const {MemRepo, FsRepo} = require('./repo')
 class GitCommand extends Command {
   async init() {
     await super.init()
-    const {args, flags} = this.parse(this.constructor)
-    const {source} = args
-    const {fetch = source.href, spec} = flags
-    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
-    this.log(`Mounting ${source.protocol ? 'mem' : 'fs'} repo from ${source.href}`)
-    if (source.protocol || flags.fetch) {
+    const {args, args: {source: {protocol: remote}, source}, flags: {fetch = source.href, spec}, flags} = this.parse(this.constructor)
+    const repo = remote ? new MemRepo() : new FsRepo(source.path)
+    this.log(`Mounting ${remote ? 'remote' : 'local'} repo from ${source.href}`)
+    if (remote || flags.fetch) {
       this.log(`Fetching ${spec} from ${fetch}`)
       await repo.fetch(fetch, spec, {progress: p => process.stdout.write(p)})
     }
