@@ -22,7 +22,7 @@ $ npm install -g @blockforfun/plugin-git
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-git/4.2.1 win32-x64 node-v10.10.0
+@blockforfun/plugin-git/4.2.2 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -65,7 +65,7 @@ ALIASES
   $ oclif-example del:json
 ```
 
-_See code: [src\commands\delete\json.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\delete\json.js)_
+_See code: [src\commands\delete\json.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\delete\json.js)_
 
 ## `oclif-example delete:text SOURCE PATH [OUTPUT]`
 
@@ -92,7 +92,7 @@ ALIASES
   $ oclif-example del:text
 ```
 
-_See code: [src\commands\delete\text.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\delete\text.js)_
+_See code: [src\commands\delete\text.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\delete\text.js)_
 
 ## `oclif-example list:json SOURCE [OUTPUT]`
 
@@ -115,7 +115,7 @@ ALIASES
   $ oclif-example ls:json
 ```
 
-_See code: [src\commands\list\json.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\list\json.js)_
+_See code: [src\commands\list\json.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\list\json.js)_
 
 ## `oclif-example list:text SOURCE [OUTPUT]`
 
@@ -139,7 +139,7 @@ ALIASES
   $ oclif-example ls:text
 ```
 
-_See code: [src\commands\list\text.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\list\text.js)_
+_See code: [src\commands\list\text.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\list\text.js)_
 
 ## `oclif-example read:json SOURCE PATH [OUTPUT]`
 
@@ -163,7 +163,7 @@ ALIASES
   $ oclif-example get:json
 ```
 
-_See code: [src\commands\read\json.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\read\json.js)_
+_See code: [src\commands\read\json.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\read\json.js)_
 
 ## `oclif-example read:text SOURCE PATH [OUTPUT]`
 
@@ -188,7 +188,7 @@ ALIASES
   $ oclif-example get:text
 ```
 
-_See code: [src\commands\read\text.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\read\text.js)_
+_See code: [src\commands\read\text.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\read\text.js)_
 
 ## `oclif-example write:json SOURCE PATH INPUT`
 
@@ -212,7 +212,7 @@ ALIASES
   $ oclif-example put:json
 ```
 
-_See code: [src\commands\write\json.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\write\json.js)_
+_See code: [src\commands\write\json.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\write\json.js)_
 
 ## `oclif-example write:text SOURCE PATH INPUT`
 
@@ -237,5 +237,5 @@ ALIASES
   $ oclif-example put:text
 ```
 
-_See code: [src\commands\write\text.js](https://github.com/blockforfun/cli/blob/v4.2.1/src\commands\write\text.js)_
+_See code: [src\commands\write\text.js](https://github.com/blockforfun/cli/blob/v4.2.2/src\commands\write\text.js)_
 <!-- commandsstop -->
