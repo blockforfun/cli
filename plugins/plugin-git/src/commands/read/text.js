@@ -31,6 +31,6 @@ ReadTextCommand.args = [
   ...GitOutCommand.args.slice(-1),
 ]
 ReadTextCommand.flags = GitOutCommand.flags
-ReadTextCommand.aliases = ['get', 'get:text']
+ReadTextCommand.aliases = ['get:text']
 
 module.exports = ReadTextCommand

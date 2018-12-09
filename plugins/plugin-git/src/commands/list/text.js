@@ -26,6 +26,6 @@ class ListTextCommand extends GitOutCommand {
 ListTextCommand.description = 'lists entries in text format from a BlockFor.fun git registry'
 ListTextCommand.args = GitOutCommand.args
 ListTextCommand.flags = GitOutCommand.flags
-ListTextCommand.aliases = ['ls', 'ls:text']
+ListTextCommand.aliases = ['ls:text']
 
 module.exports = ListTextCommand

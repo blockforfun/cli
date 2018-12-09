@@ -41,6 +41,6 @@ WriteTextCommand.args = [
   },
 ]
 WriteTextCommand.flags = GitCommand.flags
-WriteTextCommand.aliases = ['put', 'put:text']
+WriteTextCommand.aliases = ['put:text']
 
 module.exports = WriteTextCommand

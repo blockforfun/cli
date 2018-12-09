@@ -32,6 +32,6 @@ DeleteTextCommand.args = [
   ...GitOutCommand.args.slice(-1),
 ]
 DeleteTextCommand.flags = GitOutCommand.flags
-DeleteTextCommand.aliases = ['rm', 'del', 'rm:text', 'del:text']
+DeleteTextCommand.aliases = ['rm:text', 'del:text']
 
 module.exports = DeleteTextCommand
