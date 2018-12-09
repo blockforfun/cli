@@ -33,41 +33,47 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`oclif-example export:json SOURCE [TARGET]`](#oclif-example-exportjson-source-target)
-* [`oclif-example export:sqlite SOURCE TARGET`](#oclif-example-exportsqlite-source-target)
-* [`oclif-example export:text SOURCE [TARGET]`](#oclif-example-exporttext-source-target)
+* [`oclif-example export:json SOURCE [OUTPUT]`](#oclif-example-exportjson-source-output)
+* [`oclif-example export:sqlite SOURCE OUTPUT`](#oclif-example-exportsqlite-source-output)
+* [`oclif-example export:text SOURCE [OUTPUT]`](#oclif-example-exporttext-source-output)
 
-## `oclif-example export:json SOURCE [TARGET]`
+## `oclif-example export:json SOURCE [OUTPUT]`
 
 exports json entries from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example export:json SOURCE [TARGET]
+  $ oclif-example export:json SOURCE [OUTPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  TARGET  path to target file
+  OUTPUT  output file path
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ oclif-example rm
+  $ oclif-example del
+  $ oclif-example rm:text
+  $ oclif-example del:text
 ```
 
 _See code: [src\commands\export\json.js](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\json.js)_
 
-## `oclif-example export:sqlite SOURCE TARGET`
+## `oclif-example export:sqlite SOURCE OUTPUT`
 
 exports sqlite3 database from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example export:sqlite SOURCE TARGET
+  $ oclif-example export:sqlite SOURCE OUTPUT
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  TARGET  path to target sqlite3 database
+  OUTPUT  path to sqlite3 database
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
@@ -77,22 +83,28 @@ OPTIONS
 
 _See code: [src\commands\export\sqlite.js](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\sqlite.js)_
 
-## `oclif-example export:text SOURCE [TARGET]`
+## `oclif-example export:text SOURCE [OUTPUT]`
 
 exports text entries from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example export:text SOURCE [TARGET]
+  $ oclif-example export:text SOURCE [OUTPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  TARGET  path to target file
+  OUTPUT  output file path
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ oclif-example rm
+  $ oclif-example del
+  $ oclif-example rm:text
+  $ oclif-example del:text
 ```
 
 _See code: [src\commands\export\text.js](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\text.js)_

@@ -43,9 +43,9 @@ USAGE
 <!-- commands -->
 * [`blockfun delete:json SOURCE PATH [OUTPUT]`](#blockfun-deletejson-source-path-output)
 * [`blockfun delete:text SOURCE PATH [OUTPUT]`](#blockfun-deletetext-source-path-output)
-* [`blockfun export:json SOURCE [TARGET]`](#blockfun-exportjson-source-target)
-* [`blockfun export:sqlite SOURCE TARGET`](#blockfun-exportsqlite-source-target)
-* [`blockfun export:text SOURCE [TARGET]`](#blockfun-exporttext-source-target)
+* [`blockfun export:json SOURCE [OUTPUT]`](#blockfun-exportjson-source-output)
+* [`blockfun export:sqlite SOURCE OUTPUT`](#blockfun-exportsqlite-source-output)
+* [`blockfun export:text SOURCE [OUTPUT]`](#blockfun-exporttext-source-output)
 * [`blockfun help [COMMAND]`](#blockfun-help-command)
 * [`blockfun list:json SOURCE [OUTPUT]`](#blockfun-listjson-source-output)
 * [`blockfun list:text SOURCE [OUTPUT]`](#blockfun-listtext-source-output)
@@ -106,37 +106,43 @@ ALIASES
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.0/src\commands\delete\text.js)_
 
-## `blockfun export:json SOURCE [TARGET]`
+## `blockfun export:json SOURCE [OUTPUT]`
 
 exports json entries from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun export:json SOURCE [TARGET]
+  $ blockfun export:json SOURCE [OUTPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  TARGET  path to target file
+  OUTPUT  output file path
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ blockfun rm
+  $ blockfun del
+  $ blockfun rm:text
+  $ blockfun del:text
 ```
 
 _See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\json.js)_
 
-## `blockfun export:sqlite SOURCE TARGET`
+## `blockfun export:sqlite SOURCE OUTPUT`
 
 exports sqlite3 database from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun export:sqlite SOURCE TARGET
+  $ blockfun export:sqlite SOURCE OUTPUT
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  TARGET  path to target sqlite3 database
+  OUTPUT  path to sqlite3 database
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
@@ -146,22 +152,28 @@ OPTIONS
 
 _See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\sqlite.js)_
 
-## `blockfun export:text SOURCE [TARGET]`
+## `blockfun export:text SOURCE [OUTPUT]`
 
 exports text entries from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun export:text SOURCE [TARGET]
+  $ blockfun export:text SOURCE [OUTPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  TARGET  path to target file
+  OUTPUT  output file path
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
   -r, --ref=ref      [default: refs/heads/master] git ref
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+
+ALIASES
+  $ blockfun rm
+  $ blockfun del
+  $ blockfun rm:text
+  $ blockfun del:text
 ```
 
 _See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v5.0.2/src\commands\export\text.js)_
