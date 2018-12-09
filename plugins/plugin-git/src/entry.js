@@ -14,4 +14,13 @@ exports.parse = (path, body, options = {ext: EXT, delim: DELIM}) => {
   return entry
 }
 
-exports.compile = entry => ({path: `${entry.number.join('/')}.txt`, body: `${entry.flags.join(',')}\n${entry.description}`})
+exports.compile = entry => {
+  const file = {}
+  if (entry.number) {
+    file.path = `${entry.number.join('/')}.txt`
+  }
+  if (entry.flags) {
+    file.body = `${entry.flags.join(',')}\n${entry.description || ''}`
+  }
+  return file
+}
