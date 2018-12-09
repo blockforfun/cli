@@ -1,12 +1,10 @@
-const toString = require('stream-to-string')
 const WriteTextCommand = require('./text')
 const {parse} = require('../../entry')
 
 class WriteJsonCommand extends WriteTextCommand {
-  async write(repo, source, path, options) {
-    const {ref, input} = options
-    await this.mount(repo, source, options)
-    const entry = {...JSON.parse(await toString(input)), ...parse(path, null, options)}
+  async write(repo, path, body, options) {
+    const {ref} = options
+    const entry = {...JSON.parse(body), ...parse(path, null, options)}
     this.log(JSON.stringify({
       path: path.split('/'),
       commit: await repo.saveEntry(ref, entry),

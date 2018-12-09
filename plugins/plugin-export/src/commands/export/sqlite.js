@@ -2,13 +2,12 @@ const sqlite = require('sqlite')
 const GitCommand = require('@blockforfun/plugin-git/src/git-command')
 const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/repo')
 
-class exportSQLiteCommand extends GitCommand {
-  async export(repo, url, path, options) {
+class ExportSQLiteCommand extends GitCommand {
+  async export(repo, path, options) {
     this.log(`Opening sqlite DB at ${path}`)
     const db = await sqlite.open(path)
     let count = 0
     try {
-      await this.mount(repo, url, options)
       this.log('Dropping old entries')
       await db.run('DROP TABLE IF EXISTS entries')
       this.log('Creating new entries')
@@ -25,26 +24,23 @@ class exportSQLiteCommand extends GitCommand {
   }
 
   async run() {
-    const {args, flags} = this.parse(exportSQLiteCommand)
-    const {source, target} = args
-    try {
-      let count = await this.export(source.protocol ? new MemRepo() : new FsRepo(source.path), source, target, flags)
-      this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
-    } catch (error) {
-      this.error(error.message, {exit: 1})
-    }
+    const {args: {source, output}, flags: options} = this
+    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
+    await this.mount(repo, source, options)
+    let count = await this.export(repo, output, options)
+    this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
 
-exportSQLiteCommand.description = 'exports sqlite3 database from a BlockFor.fun git registry'
-exportSQLiteCommand.args = [
+ExportSQLiteCommand.description = 'exports sqlite3 database from a BlockFor.fun git registry'
+ExportSQLiteCommand.args = [
   ...GitCommand.args,
   {
-    name: 'target',
-    description: 'path to target sqlite3 database',
+    name: 'output',
+    description: 'path to sqlite3 database',
     required: true,
   },
 ]
-exportSQLiteCommand.flags = GitCommand.flags
+ExportSQLiteCommand.flags = GitCommand.flags
 
-module.exports = exportSQLiteCommand
+module.exports = ExportSQLiteCommand

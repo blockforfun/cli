@@ -5,25 +5,27 @@ const {MemRepo, FsRepo} = require('../../repo')
 const {parse} = require('../../entry')
 
 class WriteTextCommand extends GitCommand {
-  async write(repo, source, path, options) {
-    const {ref, input} = options
-    await this.mount(repo, source, options)
-    const hash = await repo.saveEntry(ref, parse(path, await toString(input), options))
+  async write(repo, path, body, options) {
+    const {ref} = options
+    const hash = await repo.saveEntry(ref, parse(path, body, options))
     this.log(`${hash} ${path}`)
     return 1
   }
 
-  async run() {
-    const {args, flags} = this.parse(WriteTextCommand)
-    const {source, path, input} = args
-    try {
-      const count = await this.write(source.protocol ? new MemRepo() : new FsRepo(source.path), source, path, {input, ...flags})
-      this.log(`Wrote ${count} ${count === 1 ? 'entry' : 'entries'}`)
-    } catch (error) {
-      this.error(error.message, {exit: 1})
-    } finally {
+  async finally(err) {
+    const {args: {input}} = this
+    if (input) {
       input.destroy()
     }
+    return super.finally(err)
+  }
+
+  async run() {
+    const {args: {source, path, input}, flags: options} = this
+    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
+    await this.mount(repo, source, options)
+    const count = await this.write(repo, path, await toString(input), options)
+    this.log(`Wrote ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
 

@@ -1,45 +1,33 @@
-const {createWriteStream} = require('fs')
-const GitCommand = require('@blockforfun/plugin-git/src/git-command')
+const GitOutCommand = require('@blockforfun/plugin-git/src/git-out-command')
 const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/repo')
 
-class exportTextCommand extends GitCommand {
-  async list(repo, source, options) {
-    const {target} = options
-    const out = target ? message => target.write(`${message}\n`) : this.log
+class ExportTextCommand extends GitOutCommand {
+  async list(repo, options) {
     let count = 0
-    await this.mount(repo, source, options)
     for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
-      out(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
+      this.out(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
       count++
     }
     return count
   }
 
+  async init() {
+    await super.init()
+    const {args: {output}} = this
+    this.out = output ? message => output.write(message) : this.log
+  }
+
   async run() {
-    const {args, flags} = this.parse(exportTextCommand)
-    const {source, target} = args
-    try {
-      const count = await this.list(source.protocol ? new MemRepo() : new FsRepo(source.path), source, {target, ...flags})
-      this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
-    } catch (error) {
-      this.error(error.message, {exit: 1})
-    } finally {
-      if (target) {
-        target.end()
-      }
-    }
+    const {args: {source}, flags: options} = this
+    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
+    await this.mount(repo, source, options)
+    const count = await this.list(repo, options)
+    this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
 
-exportTextCommand.description = 'exports text entries from a BlockFor.fun git registry'
-exportTextCommand.args = [
-  ...GitCommand.args,
-  {
-    name: 'target',
-    description: 'path to target file',
-    parse: input => createWriteStream(input),
-  },
-]
-exportTextCommand.flags = GitCommand.flags
+ExportTextCommand.description = 'exports text entries from a BlockFor.fun git registry'
+ExportTextCommand.args = GitOutCommand.args
+ExportTextCommand.flags = GitOutCommand.flags
 
-module.exports = exportTextCommand
+module.exports = ExportTextCommand

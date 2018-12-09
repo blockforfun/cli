@@ -2,6 +2,18 @@ const {parse} = require('url')
 const {Command, flags} = require('@oclif/command')
 
 class GitCommand extends Command {
+  async init() {
+    await super.init()
+    const {args, flags} = this.parse(this.constructor)
+    this.args = args
+    this.flags = flags
+  }
+
+  async catch(err) {
+    this.error(err.message, {exit: 1})
+    return super.catch(err)
+  }
+
   async mount(repo, url, options) {
     const {fetch = url.href, spec} = options
     this.log(`Mounting ${url.protocol ? 'mem' : 'fs'} repo from ${url.href}`)
