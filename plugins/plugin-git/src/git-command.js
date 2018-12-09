@@ -21,19 +21,6 @@ class GitCommand extends Command {
     this.error(err.message, {exit: 1})
     return super.catch(err)
   }
-
-  async tree(options) {
-    const {repo} = this
-    const {ref} = options
-    this.log(`Resolving ${ref}`)
-    const hash = await repo.getRef(ref)
-    if (!hash) {
-      throw new Error(`Can't find ${ref}`)
-    }
-    this.log(`Reading ${hash}`)
-    const commit = await repo.loadCommit(hash)
-    return commit.tree
-  }
 }
 
 GitCommand.args = [

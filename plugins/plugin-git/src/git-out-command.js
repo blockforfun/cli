@@ -21,6 +21,5 @@ GitOutCommand.args = [
   },
 ]
 GitOutCommand.flags = GitCommand.flags
-GitOutCommand.aliases = ['rm', 'del', 'rm:text', 'del:text']
 
 module.exports = GitOutCommand
