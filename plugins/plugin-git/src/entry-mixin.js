@@ -23,7 +23,7 @@ const recursivelyMakeFile = (parent, path, mode, hash, body) => {
 }
 
 module.exports = repo => {
-  return class EntriesRepo extends repo {
+  return class EntryRepo extends repo {
     async * listEntries(tree, options = {glob: GLOB}) {
       const {glob = GLOB} = options
       for await (const file of super.listFiles(tree)) {
