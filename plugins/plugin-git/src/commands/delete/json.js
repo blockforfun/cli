@@ -7,7 +7,10 @@ class DeleteJsonCommand extends DeleteTextCommand {
     try {
       const out = output ? message => output.write(`${message}\n`) : this.log
       await this.mount(repo, source, options)
-      out(await repo.saveEntry(ref, parse(path, null, options), options))
+      out(JSON.stringify({
+        path: path.split('/'),
+        commit: await repo.saveEntry(ref, parse(path, null, options), options),
+      }))
     } finally {
       if (output) {
         output.end()

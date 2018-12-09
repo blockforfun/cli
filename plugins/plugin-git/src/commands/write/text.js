@@ -9,8 +9,8 @@ class WriteTextCommand extends GitCommand {
     const {ref, input} = options
     try {
       await this.mount(repo, source, options)
-      const commit = await repo.saveEntry(ref, parse(path, await toString(input), options))
-      this.log(`Committed ${commit}`)
+      const hash = await repo.saveEntry(ref, parse(path, await toString(input), options))
+      this.log(`${hash} ${path}`)
     } finally {
       input.destroy()
     }

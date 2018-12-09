@@ -7,7 +7,12 @@ class WriteJsonCommand extends WriteTextCommand {
     const {ref, input} = options
     try {
       await this.mount(repo, source, options)
-      this.log(await repo.saveEntry(ref, {...JSON.parse(await toString(input)), ...parse(path, null, options)}))
+      const entry = {...JSON.parse(await toString(input)), ...parse(path, null, options)}
+      this.log(JSON.stringify({
+        path: path.split('/'),
+        commit: await repo.saveEntry(ref, entry),
+        entry,
+      }))
     } finally {
       input.destroy()
     }
