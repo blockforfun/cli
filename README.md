@@ -41,8 +41,8 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`blockfun delete:json SOURCE PATH`](#blockfun-deletejson-source-path)
-* [`blockfun delete:text SOURCE PATH`](#blockfun-deletetext-source-path)
+* [`blockfun delete:json SOURCE PATH [OUTPUT]`](#blockfun-deletejson-source-path-output)
+* [`blockfun delete:text SOURCE PATH [OUTPUT]`](#blockfun-deletetext-source-path-output)
 * [`blockfun export:json SOURCE [TARGET]`](#blockfun-exportjson-source-target)
 * [`blockfun export:sqlite SOURCE TARGET`](#blockfun-exportsqlite-source-target)
 * [`blockfun export:text SOURCE [TARGET]`](#blockfun-exporttext-source-target)
@@ -54,17 +54,18 @@ USAGE
 * [`blockfun write:json SOURCE PATH INPUT`](#blockfun-writejson-source-path-input)
 * [`blockfun write:text SOURCE PATH INPUT`](#blockfun-writetext-source-path-input)
 
-## `blockfun delete:json SOURCE PATH`
+## `blockfun delete:json SOURCE PATH [OUTPUT]`
 
 deletes entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun delete:json SOURCE PATH
+  $ blockfun delete:json SOURCE PATH [OUTPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
   PATH    git file path
+  OUTPUT  output file path
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
@@ -78,17 +79,18 @@ ALIASES
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.1.0/src\commands\delete\json.js)_
 
-## `blockfun delete:text SOURCE PATH`
+## `blockfun delete:text SOURCE PATH [OUTPUT]`
 
 deletes entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun delete:text SOURCE PATH
+  $ blockfun delete:text SOURCE PATH [OUTPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
   PATH    git file path
+  OUTPUT  output file path
 
 OPTIONS
   -f, --fetch=fetch  git fetch URL
