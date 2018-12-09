@@ -29,7 +29,7 @@ class WriteTextCommand extends GitCommand {
   }
 }
 
-WriteTextCommand.description = 'writes text formatted entries to a BlockFor.fun git registry'
+WriteTextCommand.description = 'writes entries in text format to a BlockFor.fun git registry'
 WriteTextCommand.args = [
   ...GitCommand.args,
   {

@@ -7,8 +7,7 @@ class WriteJsonCommand extends WriteTextCommand {
     const {ref, input} = options
     try {
       await this.mount(repo, source, options)
-      const commit = await repo.saveEntry(ref, {...JSON.parse(await toString(input)), ...parse(path, null, options)})
-      this.log(`Committed ${commit}`)
+      this.log(await repo.saveEntry(ref, {...JSON.parse(await toString(input)), ...parse(path, null, options)}))
     } finally {
       input.destroy()
     }
@@ -16,7 +15,7 @@ class WriteJsonCommand extends WriteTextCommand {
   }
 }
 
-WriteJsonCommand.description = 'writes json formatted entries to a BlockFor.fun git registry'
+WriteJsonCommand.description = 'writes entries in json format to a BlockFor.fun git registry'
 WriteJsonCommand.args = WriteTextCommand.args
 WriteJsonCommand.flags = WriteTextCommand.flags
 WriteJsonCommand.aliases = ['put:json']
