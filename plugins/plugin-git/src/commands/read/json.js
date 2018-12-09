@@ -6,7 +6,7 @@ class ReadJsonCommand extends ReadTextCommand {
     try {
       const out = output ? message => output.write(message) : this.log
       await this.mount(repo, source, options)
-      out(await repo.loadEntry(await this.tree(repo, options), path, options))
+      out(JSON.stringify(await repo.loadEntry(await this.tree(repo, options), path, options)))
     } finally {
       if (output) {
         output.end()
