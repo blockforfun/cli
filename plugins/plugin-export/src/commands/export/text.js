@@ -1,10 +1,9 @@
 const GitOutCommand = require('@blockforfun/plugin-git/src/git-out-command')
-const {MemRepo, FsRepo} = require('@blockforfun/plugin-git/src/repo')
 
 class ExportTextCommand extends GitOutCommand {
-  async list(repo, options) {
+  async list(options) {
     let count = 0
-    for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
+    for await (const entry of this.repo.loadEntries(await this.tree(options), options)) {
       this.out(`${entry.number.join('')}\t${entry.flags.join(',')}\t${entry.description}`)
       count++
     }
@@ -18,10 +17,8 @@ class ExportTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {source}, flags: options} = this
-    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
-    await this.mount(repo, source, options)
-    const count = await this.list(repo, options)
+    const {flags: options} = this
+    const count = await this.list(options)
     this.log(`Built ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }

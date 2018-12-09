@@ -1,12 +1,16 @@
 const {parse} = require('url')
 const {Command, flags} = require('@oclif/command')
+const {MemRepo, FsRepo} = require('./repo')
 
 class GitCommand extends Command {
   async init() {
     await super.init()
     const {args, flags} = this.parse(this.constructor)
+    const {source} = args
     this.args = args
     this.flags = flags
+    this.repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
+    await this.mount(source, flags)
   }
 
   async catch(err) {
@@ -14,16 +18,17 @@ class GitCommand extends Command {
     return super.catch(err)
   }
 
-  async mount(repo, url, options) {
+  async mount(url, options) {
     const {fetch = url.href, spec} = options
     this.log(`Mounting ${url.protocol ? 'mem' : 'fs'} repo from ${url.href}`)
     if (url.protocol || options.fetch) {
       this.log(`Fetching ${spec} from ${fetch}`)
-      await repo.fetch(fetch, spec, {progress: p => process.stdout.write(p)})
+      await this.repo.fetch(fetch, spec, {progress: p => process.stdout.write(p)})
     }
   }
 
-  async tree(repo, options) {
+  async tree(options) {
+    const {repo} = this
     const {ref} = options
     this.log(`Resolving ${ref}`)
     const hash = await repo.getRef(ref)

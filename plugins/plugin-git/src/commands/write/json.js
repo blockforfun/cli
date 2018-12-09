@@ -2,12 +2,12 @@ const WriteTextCommand = require('./text')
 const {parse} = require('../../entry')
 
 class WriteJsonCommand extends WriteTextCommand {
-  async write(repo, path, body, options) {
+  async write(path, body, options) {
     const {ref} = options
     const entry = {...JSON.parse(body), ...parse(path, null, options)}
     this.log(JSON.stringify({
       path: path.split('/'),
-      commit: await repo.saveEntry(ref, entry),
+      commit: await this.repo.saveEntry(ref, entry),
       entry,
     }))
     return 1

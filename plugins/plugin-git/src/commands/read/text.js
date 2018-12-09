@@ -1,10 +1,9 @@
 const GitOutCommand = require('../../git-out-command')
-const {MemRepo, FsRepo} = require('../../repo')
 const {compile} = require('../../entry')
 
 class ReadTextCommand extends GitOutCommand {
-  async read(repo, path, options) {
-    this.out(compile(await repo.loadEntry(await this.tree(repo, options), path, options), options).body)
+  async read(path, options) {
+    this.out(compile(await this.repo.loadEntry(await this.tree(options), path, options), options).body)
     return 1
   }
 
@@ -15,10 +14,8 @@ class ReadTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {source, path, output}, flags: options} = this
-    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
-    await this.mount(repo, source, options)
-    const count = await this.read(repo, path, options)
+    const {args: {path, output}, flags: options} = this
+    const count = await this.read(path, options)
     this.log(`${output ? 'Wrote' : 'Read'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }

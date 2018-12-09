@@ -1,11 +1,10 @@
 const GitOutCommand = require('../../git-out-command')
-const {MemRepo, FsRepo} = require('../../repo')
 const {parse} = require('../../entry')
 
 class DeleteTextCommand extends GitOutCommand {
-  async delete(repo, path, options) {
+  async delete(path, options) {
     const {ref} = options
-    const hash = await repo.saveEntry(ref, parse(path, null, options), options)
+    const hash = await this.repo.saveEntry(ref, parse(path, null, options), options)
     this.out(`${hash} ${path}`)
     return 1
   }
@@ -17,10 +16,8 @@ class DeleteTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {source, path}, flags: options} = this
-    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
-    await this.mount(repo, source, options)
-    const count = await this.delete(repo, path, options)
+    const {args: {path}, flags: options} = this
+    const count = await this.delete(path, options)
     this.log(`Deleted ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }

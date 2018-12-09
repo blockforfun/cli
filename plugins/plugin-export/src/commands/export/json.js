@@ -1,9 +1,9 @@
 const ExportTextCommand = require('./text')
 
 class ExportJsonCommand extends ExportTextCommand {
-  async list(repo, options) {
+  async list(options) {
     let count = 0
-    for await (const entry of repo.loadEntries(await this.tree(repo, options), options)) {
+    for await (const entry of this.repo.loadEntries(await this.tree(options), options)) {
       this.out(JSON.stringify(entry))
       count++
     }

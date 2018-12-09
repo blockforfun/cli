@@ -1,10 +1,9 @@
 const GitOutCommand = require('../../git-out-command')
-const {MemRepo, FsRepo} = require('../../repo')
 
 class ListTextCommand extends GitOutCommand {
-  async list(repo, options) {
+  async list(options) {
     let count = 0
-    for await (const file of repo.listEntries(await this.tree(repo, options), options)) {
+    for await (const file of this.repo.listEntries(await this.tree(options), options)) {
       this.out(`${file.hash} ${file.path.join('/')}`)
       count++
     }
@@ -18,10 +17,8 @@ class ListTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {source, output}, flags: options} = this
-    const repo = source.protocol ? new MemRepo() : new FsRepo(source.path)
-    await this.mount(repo, source, options)
-    const count = await this.list(repo, options)
+    const {args: {output}, flags: options} = this
+    const count = await this.list(options)
     this.log(`${output ? 'Wrote' : 'Listed'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
