@@ -3,7 +3,7 @@ const GitCommand = require('./git-command')
 
 class GitOutCommand extends GitCommand {
   async finally(err) {
-    const {args: {output}} = this
+    const {args: {output} = {}} = this
     if (output) {
       output.end()
     }
