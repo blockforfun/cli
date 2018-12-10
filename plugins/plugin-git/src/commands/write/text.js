@@ -11,6 +11,40 @@ class WriteTextCommand extends GitOutCommand {
     return 1
   }
 
+  async init() {
+    await super.init()
+    const {args: {input}} = this
+
+    if (input) {
+      this.in = input
+    } else {
+      const {stdin, stdin: {isRaw, setRawMode}} = process
+      // without this, we would only get streams once enter is pressed
+      if (setRawMode) stdin.setRawMode(true)
+      // resume stdin in the parent process (node app won't quit all by itself unless an error or process.exit() happens)
+      stdin.resume()
+      // you don't want binary, do you?
+      stdin.setEncoding('utf8')
+      // on any data into stdin
+      stdin.on('data', key => {
+        // ctrl-c (end of text)
+        if (key === '\u0003') {
+          // pause stdin so we don't hold up the terminal
+          stdin.pause()
+          // restore rawMode
+          if (setRawMode) stdin.setRawMode(Boolean(isRaw))
+          // emit 'end' so readers can start
+          stdin.emit('end')
+        } else {
+          // write the key to stdout all normal like
+          process.stdout.write(key)
+        }
+      })
+
+      this.in = stdin
+    }
+  }
+
   async finally(err) {
     const {args: {input} = {}} = this
     if (input) {
@@ -20,8 +54,8 @@ class WriteTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {path, input}, flags: {ref}, flags} = this
-    const count = await this.write(ref, path, await toString(input), flags)
+    const {args: {path}, flags: {ref}, flags} = this
+    const count = await this.write(ref, path, await toString(this.in), flags)
     this.log(`Wrote ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
@@ -38,7 +72,6 @@ WriteTextCommand.args = [
     name: 'input',
     description: 'input file path',
     parse: input => createReadStream(input),
-    required: true,
   },
 ]
 WriteTextCommand.flags = GitCommand.flags
