@@ -85,7 +85,7 @@ module.exports = repo => {
         ...person,
       }
       // !entry - delete
-      if (!entry.body) {
+      if (!body) {
         return super.commit(ref, recursivelyDeleteFile(hash, parts), message, commiter)
       }
       // !!entry - save
