@@ -39,8 +39,8 @@ USAGE
 * [`oclif-example list:text SOURCE [OUTPUT]`](#oclif-example-listtext-source-output)
 * [`oclif-example read:json SOURCE PATH [OUTPUT]`](#oclif-example-readjson-source-path-output)
 * [`oclif-example read:text SOURCE PATH [OUTPUT]`](#oclif-example-readtext-source-path-output)
-* [`oclif-example write:json SOURCE PATH INPUT`](#oclif-example-writejson-source-path-input)
-* [`oclif-example write:text SOURCE PATH INPUT`](#oclif-example-writetext-source-path-input)
+* [`oclif-example write:json SOURCE PATH [INPUT]`](#oclif-example-writejson-source-path-input)
+* [`oclif-example write:text SOURCE PATH [INPUT]`](#oclif-example-writetext-source-path-input)
 
 ## `oclif-example delete:json SOURCE PATH [OUTPUT]`
 
@@ -186,13 +186,13 @@ ALIASES
 
 _See code: [src\commands\read\text.js](https://github.com/blockforfun/cli/blob/v4.2.5/src\commands\read\text.js)_
 
-## `oclif-example write:json SOURCE PATH INPUT`
+## `oclif-example write:json SOURCE PATH [INPUT]`
 
 writes entries in json format to a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example write:json SOURCE PATH INPUT
+  $ oclif-example write:json SOURCE PATH [INPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
@@ -210,13 +210,13 @@ ALIASES
 
 _See code: [src\commands\write\json.js](https://github.com/blockforfun/cli/blob/v4.2.5/src\commands\write\json.js)_
 
-## `oclif-example write:text SOURCE PATH INPUT`
+## `oclif-example write:text SOURCE PATH [INPUT]`
 
 writes entries in text format to a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example write:text SOURCE PATH INPUT
+  $ oclif-example write:text SOURCE PATH [INPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path

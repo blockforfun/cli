@@ -51,8 +51,8 @@ USAGE
 * [`blockfun list:text SOURCE [OUTPUT]`](#blockfun-listtext-source-output)
 * [`blockfun read:json SOURCE PATH [OUTPUT]`](#blockfun-readjson-source-path-output)
 * [`blockfun read:text SOURCE PATH [OUTPUT]`](#blockfun-readtext-source-path-output)
-* [`blockfun write:json SOURCE PATH INPUT`](#blockfun-writejson-source-path-input)
-* [`blockfun write:text SOURCE PATH INPUT`](#blockfun-writetext-source-path-input)
+* [`blockfun write:json SOURCE PATH [INPUT]`](#blockfun-writejson-source-path-input)
+* [`blockfun write:text SOURCE PATH [INPUT]`](#blockfun-writetext-source-path-input)
 
 ## `blockfun delete:json SOURCE PATH [OUTPUT]`
 
@@ -275,13 +275,13 @@ ALIASES
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.5/src\commands\read\text.js)_
 
-## `blockfun write:json SOURCE PATH INPUT`
+## `blockfun write:json SOURCE PATH [INPUT]`
 
 writes entries in json format to a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun write:json SOURCE PATH INPUT
+  $ blockfun write:json SOURCE PATH [INPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
@@ -299,13 +299,13 @@ ALIASES
 
 _See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v4.2.5/src\commands\write\json.js)_
 
-## `blockfun write:text SOURCE PATH INPUT`
+## `blockfun write:text SOURCE PATH [INPUT]`
 
 writes entries in text format to a BlockFor.fun git registry
 
 ```
 USAGE
-  $ blockfun write:text SOURCE PATH INPUT
+  $ blockfun write:text SOURCE PATH [INPUT]
 
 ARGUMENTS
   SOURCE  git repository URL or path
