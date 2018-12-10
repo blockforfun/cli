@@ -6,8 +6,8 @@ class GitCommand extends Command {
   async init() {
     await super.init()
     const {args, args: {source: {protocol: remote}, source}, flags: {fetch = source.href, spec}, flags} = this.parse(this.constructor)
-    const repo = remote ? new MemRepo() : new FsRepo(source.path)
     this.log(`Mounting ${remote ? 'remote' : 'local'} repo from ${source.href}`)
+    const repo = remote ? new MemRepo() : new FsRepo(source.path)
     if (remote || flags.fetch) {
       this.log(`Fetching ${spec} from ${fetch}`)
       await repo.fetch(fetch, spec, {progress: p => process.stdout.write(p)})
