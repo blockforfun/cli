@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-export@5.0.7...@blockforfun/plugin-export@5.1.0) (2018-12-10)
+
+
+### Features
+
+* Always redirect output using out.write ([fd0027f](https://github.com/blockforfun/cli/commit/fd0027f))
+
+
+
+
+
 ## [5.0.7](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-export@5.0.6...@blockforfun/plugin-export@5.0.7) (2018-12-09)
 
 **Note:** Version bump only for package @blockforfun/plugin-export

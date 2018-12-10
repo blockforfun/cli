@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.3.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@4.2.5...@blockforfun/plugin-git@4.3.0) (2018-12-10)
+
+
+### Bug Fixes
+
+* Cleanup dead/bad code ([e9187db](https://github.com/blockforfun/cli/commit/e9187db))
+* Fix mount log message ordering ([1aa865e](https://github.com/blockforfun/cli/commit/1aa865e))
+* recurivelyMakeFile returned invalid tre ([0c4f782](https://github.com/blockforfun/cli/commit/0c4f782))
+* saveEntry not saving ([3ce408d](https://github.com/blockforfun/cli/commit/3ce408d))
+
+
+### Features
+
+* Always redirect output using out.write ([fd0027f](https://github.com/blockforfun/cli/commit/fd0027f))
+* Read input from stdin ([909a471](https://github.com/blockforfun/cli/commit/909a471))
+
+
+
+
+
 ## [4.2.5](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@4.2.4...@blockforfun/plugin-git@4.2.5) (2018-12-09)
 
 
