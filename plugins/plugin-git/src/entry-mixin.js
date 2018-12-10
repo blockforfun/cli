@@ -17,8 +17,7 @@ const recursivelyMakeFile = (parent, path, hash, body) => {
       },
     }
   } else {
-    const folder = folders[name] || (folders[name] = {files: {}, folders: {}})
-    return recursivelyMakeFile(folder, subPath, hash, body)
+    recursivelyMakeFile(folders[name] || (folders[name] = {files: {}, folders: {}}), subPath, hash, body)
   }
   return parent
 }
