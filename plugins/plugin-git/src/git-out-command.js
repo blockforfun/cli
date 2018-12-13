@@ -27,7 +27,6 @@ class GitOutCommand extends GitCommand {
   }
 }
 
-GitOutCommand.description = 'deletes entries in text format from a BlockFor.fun git registry'
 GitOutCommand.args = GitCommand.args
 GitOutCommand.flags = {
   ...GitCommand.flags,
