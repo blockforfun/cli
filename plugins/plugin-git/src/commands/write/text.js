@@ -53,8 +53,11 @@ class WriteTextCommand extends GitOutCommand {
   }
 
   async finally(err) {
+    const {in: input} = this
     // clean up in stream resources
-    this.in.destroy()
+    if (input) {
+      input.destroy()
+    }
     return super.finally(err)
   }
 
