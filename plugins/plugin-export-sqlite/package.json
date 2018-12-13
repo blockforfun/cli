@@ -23,7 +23,7 @@
     "/src",
     "/yarn.lock"
   ],
-  "homepage": "https://blockfor.fun/cli/plugins/plugin-export",
+  "homepage": "https://blockfor.fun/cli/plugins/plugin-export-sqlite",
   "keywords": [
     "oclif-plugin"
   ],
