@@ -1,4 +1,4 @@
-const GitOutCommand = require('@blockforfun/plugin-git/src/git-out-command')
+const GitOutCommand = require('../../git-out-command')
 
 class ExportTextCommand extends GitOutCommand {
   async list(ref, options) {

@@ -56,6 +56,9 @@
       },
       "write": {
         "description": "writes entries to a BlockFor.fun git registry"
+      },
+      "export": {
+        "description": "exports databases from a BlockFor.fun git registry"
       }
     },
     "bin": "oclif-example",
