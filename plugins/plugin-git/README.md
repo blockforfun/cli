@@ -200,9 +200,10 @@ ARGUMENTS
   INPUT   input file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example put:json
@@ -224,9 +225,10 @@ ARGUMENTS
   INPUT   input file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example put:text
