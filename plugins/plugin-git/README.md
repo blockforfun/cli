@@ -33,32 +33,32 @@ USAGE
 # Commands
 
 <!-- commands -->
-* [`oclif-example delete:json SOURCE PATH [OUTPUT]`](#oclif-example-deletejson-source-path-output)
-* [`oclif-example delete:text SOURCE PATH [OUTPUT]`](#oclif-example-deletetext-source-path-output)
-* [`oclif-example list:json SOURCE [OUTPUT]`](#oclif-example-listjson-source-output)
-* [`oclif-example list:text SOURCE [OUTPUT]`](#oclif-example-listtext-source-output)
-* [`oclif-example read:json SOURCE PATH [OUTPUT]`](#oclif-example-readjson-source-path-output)
-* [`oclif-example read:text SOURCE PATH [OUTPUT]`](#oclif-example-readtext-source-path-output)
+* [`oclif-example delete:json SOURCE PATH`](#oclif-example-deletejson-source-path)
+* [`oclif-example delete:text SOURCE PATH`](#oclif-example-deletetext-source-path)
+* [`oclif-example list:json SOURCE`](#oclif-example-listjson-source)
+* [`oclif-example list:text SOURCE`](#oclif-example-listtext-source)
+* [`oclif-example read:json SOURCE PATH`](#oclif-example-readjson-source-path)
+* [`oclif-example read:text SOURCE PATH`](#oclif-example-readtext-source-path)
 * [`oclif-example write:json SOURCE PATH [INPUT]`](#oclif-example-writejson-source-path-input)
 * [`oclif-example write:text SOURCE PATH [INPUT]`](#oclif-example-writetext-source-path-input)
 
-## `oclif-example delete:json SOURCE PATH [OUTPUT]`
+## `oclif-example delete:json SOURCE PATH`
 
 deletes entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example delete:json SOURCE PATH [OUTPUT]
+  $ oclif-example delete:json SOURCE PATH
 
 ARGUMENTS
   SOURCE  git repository URL or path
   PATH    git file path
-  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example rm:json
@@ -67,23 +67,23 @@ ALIASES
 
 _See code: [src\commands\delete\json.js](https://github.com/blockforfun/cli/blob/v4.3.0/src\commands\delete\json.js)_
 
-## `oclif-example delete:text SOURCE PATH [OUTPUT]`
+## `oclif-example delete:text SOURCE PATH`
 
 deletes entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example delete:text SOURCE PATH [OUTPUT]
+  $ oclif-example delete:text SOURCE PATH
 
 ARGUMENTS
   SOURCE  git repository URL or path
   PATH    git file path
-  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example rm:text
@@ -92,22 +92,22 @@ ALIASES
 
 _See code: [src\commands\delete\text.js](https://github.com/blockforfun/cli/blob/v4.3.0/src\commands\delete\text.js)_
 
-## `oclif-example list:json SOURCE [OUTPUT]`
+## `oclif-example list:json SOURCE`
 
 lists entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example list:json SOURCE [OUTPUT]
+  $ oclif-example list:json SOURCE
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example ls:json
@@ -115,22 +115,22 @@ ALIASES
 
 _See code: [src\commands\list\json.js](https://github.com/blockforfun/cli/blob/v4.3.0/src\commands\list\json.js)_
 
-## `oclif-example list:text SOURCE [OUTPUT]`
+## `oclif-example list:text SOURCE`
 
 lists entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example list:text SOURCE [OUTPUT]
+  $ oclif-example list:text SOURCE
 
 ARGUMENTS
   SOURCE  git repository URL or path
-  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example ls:text
@@ -138,23 +138,23 @@ ALIASES
 
 _See code: [src\commands\list\text.js](https://github.com/blockforfun/cli/blob/v4.3.0/src\commands\list\text.js)_
 
-## `oclif-example read:json SOURCE PATH [OUTPUT]`
+## `oclif-example read:json SOURCE PATH`
 
 reads entries in json format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example read:json SOURCE PATH [OUTPUT]
+  $ oclif-example read:json SOURCE PATH
 
 ARGUMENTS
   SOURCE  git repository URL or path
   PATH    git file path
-  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example get:json
@@ -162,23 +162,23 @@ ALIASES
 
 _See code: [src\commands\read\json.js](https://github.com/blockforfun/cli/blob/v4.3.0/src\commands\read\json.js)_
 
-## `oclif-example read:text SOURCE PATH [OUTPUT]`
+## `oclif-example read:text SOURCE PATH`
 
 reads entries in text format from a BlockFor.fun git registry
 
 ```
 USAGE
-  $ oclif-example read:text SOURCE PATH [OUTPUT]
+  $ oclif-example read:text SOURCE PATH
 
 ARGUMENTS
   SOURCE  git repository URL or path
   PATH    git file path
-  OUTPUT  output file path
 
 OPTIONS
-  -f, --fetch=fetch  git fetch URL
-  -r, --ref=ref      [default: refs/heads/master] git ref
-  -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 
 ALIASES
   $ oclif-example get:text
