@@ -3,6 +3,7 @@ const toString = require('stream-to-string')
 const GitCommand = require('../../git-command')
 const GitOutCommand = require('../../git-out-command')
 const {parse} = require('../../entry')
+const {Readable} = require('stream')
 
 class WriteTextCommand extends GitOutCommand {
   async write(ref, path, body, options) {
@@ -13,12 +14,16 @@ class WriteTextCommand extends GitOutCommand {
 
   async init() {
     await super.init()
-    const {args: {input}} = this
+    let {args: {input}} = this
 
-    if (input) {
-      this.in = input
-    } else {
+    if (!input) {
       const {stdin, stdin: {isRaw, setRawMode}} = process
+      // readable sink we can pass round
+      input = new Readable({
+        read() {},
+      })
+      // pipe input to stdout so we get some feedback
+      input.pipe(process.stdout)
       // without this, we would only get streams once enter is pressed
       if (setRawMode) stdin.setRawMode(true)
       // resume stdin in the parent process (node app won't quit all by itself unless an error or process.exit() happens)
@@ -33,23 +38,23 @@ class WriteTextCommand extends GitOutCommand {
           stdin.pause()
           // restore rawMode
           if (setRawMode) stdin.setRawMode(Boolean(isRaw))
-          // emit 'end' so readers can start
-          stdin.emit('end')
+          // signal EOT
+          input.push(null)
         } else {
-          // write the key to stdout all normal like
-          process.stdout.write(key)
+          // push the key to input all normal like
+          input.push(key)
         }
       })
-
-      this.in = stdin
+      // singnal EOT when piped stdin closes
+      stdin.on('close', () => input.push(null))
     }
+    // store in stream so we can read() from it later
+    this.in = input
   }
 
   async finally(err) {
-    const {args: {input} = {}} = this
-    if (input) {
-      input.destroy()
-    }
+    // clean up in stream resources
+    this.in.destroy()
     return super.finally(err)
   }
 
