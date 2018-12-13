@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@4.3.0...@blockforfun/plugin-git@5.0.0) (2018-12-13)
+
+
+### Bug Fixes
+
+* Only destroy this.in if it's set ([09bc115](https://github.com/blockforfun/cli/commit/09bc115))
+
+
+### Features
+
+* Move output argument to flag ([f32a018](https://github.com/blockforfun/cli/commit/f32a018))
+
+
+### BREAKING CHANGES
+
+* Move the `OUTPUT` argument to  the `-output` flag
+
+
+
+
+
+
 # [4.3.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@4.2.5...@blockforfun/plugin-git@4.3.0) (2018-12-10)
 
 

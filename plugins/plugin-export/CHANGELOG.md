@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-export@5.1.0...@blockforfun/plugin-export@6.0.0) (2018-12-13)
+
+
+### Features
+
+* Move output argument to flag ([f32a018](https://github.com/blockforfun/cli/commit/f32a018))
+
+
+### BREAKING CHANGES
+
+* Move the `OUTPUT` argument to  the `-output` flag
+
+
+
+
+
+
 # [5.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-export@5.0.7...@blockforfun/plugin-export@5.1.0) (2018-12-10)
 
 
