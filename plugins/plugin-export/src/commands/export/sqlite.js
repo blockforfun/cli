@@ -23,8 +23,8 @@ class ExportSQLiteCommand extends GitCommand {
   }
 
   async run() {
-    const {args: {output}, flags: {ref}, flags} = this
-    let count = await this.export(ref, output, flags)
+    const {args: {target}, flags: {ref}, flags} = this
+    let count = await this.export(ref, target, flags)
     this.log(`Exported ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
 }
@@ -33,7 +33,7 @@ ExportSQLiteCommand.description = 'exports sqlite3 database from a BlockFor.fun 
 ExportSQLiteCommand.args = [
   ...GitCommand.args,
   {
-    name: 'output',
+    name: 'target',
     description: 'path to sqlite3 database',
     required: true,
   },
