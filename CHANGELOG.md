@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [10.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@9.1.0...@blockforfun/cli@10.0.0) (2018-12-13)
+
+
+### Bug Fixes
+
+* Remove invalid description from git-out-command ([3053c3d](https://github.com/blockforfun/cli/commit/3053c3d))
+
+
+### Features
+
+* Move json/text export to plugin-git ([826708a](https://github.com/blockforfun/cli/commit/826708a))
+
+
+### BREAKING CHANGES
+
+* json/text export removed from plugin-export
+
+
+
+
+
 # [9.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/cli@9.0.0...@blockforfun/cli@9.1.0) (2018-12-13)
 
 

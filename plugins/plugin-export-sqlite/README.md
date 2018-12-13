@@ -22,7 +22,7 @@ $ npm install -g @blockforfun/plugin-export-sqlite
 $ oclif-example COMMAND
 running command...
 $ oclif-example (-v|--version|version)
-@blockforfun/plugin-export-sqlite/6.0.1 win32-x64 node-v10.10.0
+@blockforfun/plugin-export-sqlite/6.0.2 win32-x64 node-v10.10.0
 $ oclif-example --help [COMMAND]
 USAGE
   $ oclif-example COMMAND
@@ -53,5 +53,5 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [src\commands\export\sqlite.js](https://github.com/blockforfun/cli/blob/v6.0.1/src\commands\export\sqlite.js)_
+_See code: [src\commands\export\sqlite.js](https://github.com/blockforfun/cli/blob/v6.0.2/src\commands\export\sqlite.js)_
 <!-- commandsstop -->
