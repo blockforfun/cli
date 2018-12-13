@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.1.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@5.0.0...@blockforfun/plugin-git@5.1.0) (2018-12-13)
+
+
+### Features
+
+* Enable output in write:* commands ([b7c6c86](https://github.com/blockforfun/cli/commit/b7c6c86))
+
+
+
+
+
 # [5.0.0](https://github.com/blockforfun/cli/compare/@blockforfun/plugin-git@4.3.0...@blockforfun/plugin-git@5.0.0) (2018-12-13)
 
 
