@@ -1,6 +1,5 @@
 const {createReadStream} = require('fs')
 const toString = require('stream-to-string')
-const GitCommand = require('../../git-command')
 const GitOutCommand = require('../../git-out-command')
 const {parse} = require('../../entry')
 const {Readable} = require('stream')
@@ -70,7 +69,7 @@ class WriteTextCommand extends GitOutCommand {
 
 WriteTextCommand.description = 'writes entries in text format to a BlockFor.fun git registry'
 WriteTextCommand.args = [
-  ...GitCommand.args,
+  ...GitOutCommand.args,
   {
     name: 'path',
     description: 'git file path',
@@ -82,7 +81,7 @@ WriteTextCommand.args = [
     parse: input => createReadStream(input),
   },
 ]
-WriteTextCommand.flags = GitCommand.flags
+WriteTextCommand.flags = GitOutCommand.flags
 WriteTextCommand.aliases = ['put:text']
 
 module.exports = WriteTextCommand
