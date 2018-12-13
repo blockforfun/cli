@@ -9,7 +9,7 @@ class ReadTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {path, output}, flags, flags: {ref}} = this
+    const {args: {path}, flags, flags: {ref, output}} = this
     const count = await this.read(ref, path, flags)
     this.log(`${output ? 'Wrote' : 'Read'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
@@ -17,13 +17,12 @@ class ReadTextCommand extends GitOutCommand {
 
 ReadTextCommand.description = 'reads entries in text format from a BlockFor.fun git registry'
 ReadTextCommand.args = [
-  ...GitOutCommand.args.slice(0, -1),
+  ...GitOutCommand.args,
   {
     name: 'path',
     description: 'git file path',
     required: true,
   },
-  ...GitOutCommand.args.slice(-1),
 ]
 ReadTextCommand.flags = GitOutCommand.flags
 ReadTextCommand.aliases = ['get:text']

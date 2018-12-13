@@ -9,7 +9,7 @@ class DeleteTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {path, output}, flags: {ref}, flags} = this
+    const {args: {path}, flags, flags: {ref, output}} = this
     const count = await this.delete(ref, path, flags)
     this.log(`${output ? 'Wrote' : 'Deleted'} ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
@@ -17,13 +17,12 @@ class DeleteTextCommand extends GitOutCommand {
 
 DeleteTextCommand.description = 'deletes entries in text format from a BlockFor.fun git registry'
 DeleteTextCommand.args = [
-  ...GitOutCommand.args.slice(0, -1),
+  ...GitOutCommand.args,
   {
     name: 'path',
     description: 'git file path',
     required: true,
   },
-  ...GitOutCommand.args.slice(-1),
 ]
 DeleteTextCommand.flags = GitOutCommand.flags
 DeleteTextCommand.aliases = ['rm:text', 'del:text']

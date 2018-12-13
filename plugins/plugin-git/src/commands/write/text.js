@@ -62,7 +62,7 @@ class WriteTextCommand extends GitOutCommand {
   }
 
   async run() {
-    const {args: {path}, flags: {ref}, flags} = this
+    const {args: {path}, flags, flags: {ref}} = this
     const count = await this.write(ref, path, await toString(this.in), flags)
     this.log(`Wrote ${count} ${count === 1 ? 'entry' : 'entries'}`)
   }
