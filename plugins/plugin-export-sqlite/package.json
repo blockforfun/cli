@@ -1,5 +1,5 @@
 {
-  "name": "@blockforfun/plugin-export",
+  "name": "@blockforfun/plugin-export-sqlite",
   "description": "BlockFor.fun CLI export plugin",
   "version": "6.0.1",
   "author": "Mikael Karon <mikael@karon.se>",

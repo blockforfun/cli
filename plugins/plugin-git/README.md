@@ -35,6 +35,8 @@ USAGE
 <!-- commands -->
 * [`oclif-example delete:json SOURCE PATH`](#oclif-example-deletejson-source-path)
 * [`oclif-example delete:text SOURCE PATH`](#oclif-example-deletetext-source-path)
+* [`oclif-example export:json SOURCE`](#oclif-example-exportjson-source)
+* [`oclif-example export:text SOURCE`](#oclif-example-exporttext-source)
 * [`oclif-example list:json SOURCE`](#oclif-example-listjson-source)
 * [`oclif-example list:text SOURCE`](#oclif-example-listtext-source)
 * [`oclif-example read:json SOURCE PATH`](#oclif-example-readjson-source-path)
@@ -91,6 +93,46 @@ ALIASES
 ```
 
 _See code: [src\commands\delete\text.js](https://github.com/blockforfun/cli/blob/v5.1.0/src\commands\delete\text.js)_
+
+## `oclif-example export:json SOURCE`
+
+exports json entries from a BlockFor.fun git registry
+
+```
+USAGE
+  $ oclif-example export:json SOURCE
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+
+OPTIONS
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
+```
+
+_See code: [src\commands\export\json.js](https://github.com/blockforfun/cli/blob/v5.1.0/src\commands\export\json.js)_
+
+## `oclif-example export:text SOURCE`
+
+exports text entries from a BlockFor.fun git registry
+
+```
+USAGE
+  $ oclif-example export:text SOURCE
+
+ARGUMENTS
+  SOURCE  git repository URL or path
+
+OPTIONS
+  -f, --fetch=fetch    git fetch URL
+  -o, --output=output  output file path
+  -r, --ref=ref        [default: refs/heads/master] git ref
+  -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
+```
+
+_See code: [src\commands\export\text.js](https://github.com/blockforfun/cli/blob/v5.1.0/src\commands\export\text.js)_
 
 ## `oclif-example list:json SOURCE`
 

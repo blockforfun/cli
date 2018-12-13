@@ -20,7 +20,7 @@ BlockFor.fun CLI
 Bundled plugins
 
 * [`@blockforfun/plugin-git`](plugins/plugin-git)
-* [`@blockforfun/plugin-export`](plugins/plugin-export)
+* [`@blockforfun/plugin-export-sqlite`](plugins/plugin-export-sqlite)
 
 # Usage
 
@@ -122,7 +122,7 @@ OPTIONS
   -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v6.0.1/src\commands\export\json.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v5.1.0/src\commands\export\json.js)_
 
 ## `blockfun export:sqlite SOURCE TARGET`
 
@@ -142,7 +142,7 @@ OPTIONS
   -s, --spec=spec    [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v6.0.1/src\commands\export\sqlite.js)_
+_See code: [@blockforfun/plugin-export-sqlite](https://github.com/blockforfun/cli/blob/v6.0.1/src\commands\export\sqlite.js)_
 
 ## `blockfun export:text SOURCE`
 
@@ -162,7 +162,7 @@ OPTIONS
   -s, --spec=spec      [default: refs/heads/*:refs/heads/*] git fetch refspec
 ```
 
-_See code: [@blockforfun/plugin-export](https://github.com/blockforfun/cli/blob/v6.0.1/src\commands\export\text.js)_
+_See code: [@blockforfun/plugin-git](https://github.com/blockforfun/cli/blob/v5.1.0/src\commands\export\text.js)_
 
 ## `blockfun help [COMMAND]`
 
